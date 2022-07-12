@@ -14,7 +14,7 @@ public class User {
     //邮箱
     private String email;
     //身份证号
-    private int nid;
+    private String nid;
     //学历
     private String  study;
     //工作经验
@@ -74,11 +74,11 @@ public class User {
         this.email = email;
     }
 
-    public int getNid() {
+    public String getNid() {
         return nid;
     }
 
-    public void setNid(int nid) {
+    public void setNid(String nid) {
         this.nid = nid;
     }
 
