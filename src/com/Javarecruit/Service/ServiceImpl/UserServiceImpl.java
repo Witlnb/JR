@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String add(User user) {
+    public String enroll(User user) {
         UserDao userDao = new UserDaoImpl();
         userDao.addByUser(user);
         return "成功";
