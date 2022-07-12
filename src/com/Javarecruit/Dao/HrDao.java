@@ -9,4 +9,10 @@ public interface HrDao {
      * @return 返回受影响行数
      */
     int addByHr(Hr hr);
+    /**
+     * 查询
+     * @param phone 手机号
+     * @return
+     */
+    public Hr querybyphone(String phone);
 }

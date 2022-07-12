@@ -15,4 +15,12 @@ public interface UserService {
      * @return
      */
     String enroll(User user);
+
+    /**
+     * 登录
+     * @param uname 用户名
+     * @param pwd 用户密码
+     * @return
+     */
+    String login(String uname,String pwd);
 }
