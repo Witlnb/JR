@@ -11,6 +11,16 @@ public class Hr {
     private String phone;
     //地址
     private String caddress;
+    //预计薪资
+    private Integer hmoney;
+
+    public Integer getHmoney() {
+        return hmoney;
+    }
+
+    public void setHmoney(Integer hmoney) {
+        this.hmoney = hmoney;
+    }
 
     public Integer getCompanyid() {
         return companyid;
