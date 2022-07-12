@@ -10,9 +10,9 @@ public interface UserService {
     int revise();
 
     /**
-     *
+     * 用户注册
      * @param user
      * @return
      */
-    String add(User user);
+    String enroll(User user);
 }
