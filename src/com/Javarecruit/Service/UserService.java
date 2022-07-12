@@ -7,7 +7,7 @@ public interface UserService {
      * 修改
      * @return 修改提示
      */
-    int revise();
+    int revise(User u);
 
     /**
      * 用户注册

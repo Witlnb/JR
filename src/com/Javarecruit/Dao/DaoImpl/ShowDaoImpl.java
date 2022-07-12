@@ -19,7 +19,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         PreparedStatement ps=null;
         ResultSet rs=null;
         List<Show> sh=new ArrayList<Show>();
-        String sql="select * from show";
+        String sql="select * from `show`";
         try{
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
@@ -44,7 +44,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         PreparedStatement ps=null;
         ResultSet rs=null;
         Show ss=new Show();
-        String sql="select * from show where money=?";
+        String sql="select * from `show` where money=?";
         try{
             ps=con.prepareStatement(sql);
             ps.setInt(1,money);
@@ -69,7 +69,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         PreparedStatement ps=null;
         ResultSet rs=null;
         Show ss=new Show();
-        String sql="select * from show where title=?";
+        String sql="select * from `show` where title=?";
         try{
             ps=con.prepareStatement(sql);
             ps.setString(1,title);
@@ -94,7 +94,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         PreparedStatement ps=null;
         ResultSet rs=null;
         Show ss=new Show();
-        String sql="select * from show where money=? and title=?";
+        String sql="select * from `show` where money=? and title=?";
         try{
             ps=con.prepareStatement(sql);
             ps.setInt(1,money);
@@ -120,7 +120,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         PreparedStatement ps=null;
         ResultSet rs=null;
         Show ss=new Show();
-        String sql="select * from show where money between ? and ?";
+        String sql="select * from `show` where money between ? and ?";
         try{
             ps=con.prepareStatement(sql);
             ps.setInt(1,one);
