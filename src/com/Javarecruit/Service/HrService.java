@@ -1,5 +1,12 @@
 package com.Javarecruit.Service;
 
-public interface HrService {
+import com.Javarecruit.pojo.Hr;
 
+public interface HrService {
+    /**
+     * 人事注册
+     * @param hr
+     * @return
+     */
+    String enroll(Hr hr);
 }
