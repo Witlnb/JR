@@ -37,4 +37,106 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         }
         return sh;
     }
+    //根据薪资展示的方法
+    @Override
+    public Show queryMoney(Integer money) {
+        Connection con=conn();
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        Show ss=new Show();
+        String sql="select * from show where money=?";
+        try{
+            ps=con.prepareStatement(sql);
+            ps.setInt(1,money);
+            rs=ps.executeQuery();
+            if(rs.next()){
+                ss.setSid(rs.getInt("sid"));
+                ss.setTitle(rs.getString("title"));
+                ss.setShow(rs.getString("show"));
+                ss.setCompany(rs.getString("company"));
+                ss.setCompanyid(rs.getInt("companyid"));
+                ss.setMoney(rs.getInt("money"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ss;
+    }
+//根据标签展示的方法
+    @Override
+    public Show queryTitle(String title) {
+        Connection con=conn();
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        Show ss=new Show();
+        String sql="select * from show where title=?";
+        try{
+            ps=con.prepareStatement(sql);
+            ps.setString(1,title);
+            rs=ps.executeQuery();
+            if(rs.next()){
+                ss.setSid(rs.getInt("sid"));
+                ss.setTitle(rs.getString("title"));
+                ss.setShow(rs.getString("show"));
+                ss.setCompany(rs.getString("company"));
+                ss.setCompanyid(rs.getInt("companyid"));
+                ss.setMoney(rs.getInt("money"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ss;
+    }
+//根据薪资和标签展示的方法
+    @Override
+    public Show queryMoneyTitle(Integer money, String title) {
+        Connection con=conn();
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        Show ss=new Show();
+        String sql="select * from show where money=? and title=?";
+        try{
+            ps=con.prepareStatement(sql);
+            ps.setInt(1,money);
+            ps.setString(2,title);
+            rs=ps.executeQuery();
+            if(rs.next()){
+                ss.setSid(rs.getInt("sid"));
+                ss.setTitle(rs.getString("title"));
+                ss.setShow(rs.getString("show"));
+                ss.setCompany(rs.getString("company"));
+                ss.setCompanyid(rs.getInt("companyid"));
+                ss.setMoney(rs.getInt("money"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ss;
+    }
+//根据薪资范围展示的方法
+    @Override
+    public Show queryTwoMoney(Integer one, Integer two) {
+        Connection con=conn();
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        Show ss=new Show();
+        String sql="select * from show where money between ? and ?";
+        try{
+            ps=con.prepareStatement(sql);
+            ps.setInt(1,one);
+            ps.setInt(2,two);
+            rs=ps.executeQuery();
+            if(rs.next()){
+                ss.setSid(rs.getInt("sid"));
+                ss.setTitle(rs.getString("title"));
+                ss.setShow(rs.getString("show"));
+                ss.setCompany(rs.getString("company"));
+                ss.setCompanyid(rs.getInt("companyid"));
+                ss.setMoney(rs.getInt("money"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ss;
+    }
 }
