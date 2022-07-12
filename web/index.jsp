@@ -11,23 +11,38 @@
     <title>Title</title>
     <style type="text/css">
         .showAdOne{
-            width: 500px;
-            height: 300px;
+            width: 180px;
+            height: 100px;
+            background-color: black;
+            position: absolute;
+            top: 150px;
+            left: 700px;
         }
         .showAdTwo{
-            width: 500px;
-            height: 300px;
+            width: 180px;
+            height: 100px;
+            background-color: #ef7b7b;
+            position: absolute;
+            top: 250px;
+            left: 700px;
         }
         .showAdThree{
-            width: 500px;
-            height: 300px;
+            width: 150px;
+            height: 100px;
+            background-color: #9b7f7f;
+            position: absolute;
+            top: 150px;
+            left: 880px;
         }
         .showAdFor{
-            width: 500px;
-            height: 300px;
+            width: 150px;
+            height: 100px;
+            background-color: #560707;
+            position: absolute;
+            top: 250px;
+            left: 880px;
         }
         #ad{
-
         }
     </style>
 </head>
