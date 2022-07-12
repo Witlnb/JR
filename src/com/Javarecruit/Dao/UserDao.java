@@ -7,7 +7,7 @@ public interface UserDao {
      * 修改
      * @return 返回确认数值
      */
-    int revise(User user);
+    int revise(User u);
 
     /**
      * 新增

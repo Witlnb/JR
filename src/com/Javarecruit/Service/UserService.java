@@ -14,5 +14,5 @@ public interface UserService {
      * @param user
      * @return
      */
-    String add(User user);
+    String enroll(User user);
 }
