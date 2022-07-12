@@ -11,11 +11,13 @@
     <title>Title</title>
 </head>
 <body>
-公司名称:<input type="text" name="company"><br>
-公司信息:<textarea name="cshow"></textarea><br>
-预计薪资:<input type="text" name="hmoney"><br>
-地址:<input type="text" name="caddress"><br>
-手机号:<input type="text" name="phone"><br>
-<input type="submit" value="注册">
+    <form action="HrEnrollServlet" method="post">
+        公司名称:<input type="text" name="company"><br>
+        公司信息:<textarea name="cshow"></textarea><br>
+        预计薪资:<input type="text" name="hmoney"><br>
+        地址:<input type="text" name="caddress"><br>
+        手机号:<input type="tel" name="phone"><br>
+        <input type="submit" value="注册">
+    </form>
 </body>
 </html>

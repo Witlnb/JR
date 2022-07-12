@@ -11,13 +11,13 @@
     <title>Title</title>
 </head>
 <body>
-    <form>
+    <form action="EnrollServlet" method="post">
         用户名:<input type="text" name="uname"><br>
         密码:<input type="password" name="upwd"><br>
-        手机号:<input type="text" name="phone"><br>
+        手机号:<input type="tel" name="phone"><br>
         邮箱:<input type="email" name="email"><br>
         身份证号:<input type="text" name="nid"><br>
-        学历:<select id="select">
+        学历:<select name="study">
             <option value="">请选择</option>
             <option value="初中及以下">初中及以下</option>
             <option value="高中">高中</option>
@@ -27,7 +27,7 @@
             <option value="硕士">硕士</option>
             <option value="博士">博士</option>
         </select><br>
-        工作经验:<select id="select1">
+        工作经验:<select name="job">
             <option value="">请选择</option>
             <option value="无经验">无经验</option>
             <option value="一年以下">一年以下</option>
@@ -36,8 +36,8 @@
             <option value="5-10年">5-10年</option>
             <option value="10年以上">10年以上</option>
         </select><br>
-        性别:男<input type="radio" name="sex" value="0">
-        女<input type="radio" name="sex" value="1"><br>
+        性别:男<input type="radio" name="sex" value="男">
+        女<input type="radio" name="sex" value="女"><br>
         地址:<input type="text" name="address"><br>
         简历:<input type="file" name="personal"><br>
         <input type="submit" value="注册">
