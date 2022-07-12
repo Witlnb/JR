@@ -11,6 +11,16 @@ public class Show {
     private String company;
     //公司号
     private Integer companyid;
+    //薪资
+    private Integer money;
+
+    public Integer getMoney() {
+        return money;
+    }
+
+    public void setMoney(Integer money) {
+        this.money = money;
+    }
 
     public Integer getSid() {
         return sid;
