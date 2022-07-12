@@ -11,9 +11,9 @@ public class UserServiceImpl implements UserService {
      * @return 返回信息
      */
     @Override
-    public int revise() {
-
-        return 0;
+    public int revise(User u) {
+        UserDao userDao = new UserDaoImpl();
+        return userDao.revise(u);
     }
 
     @Override
