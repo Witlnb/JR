@@ -3,6 +3,7 @@ package com.Javarecruit.Dao.DaoImpl;
 import com.Javarecruit.Dao.BaseDao;
 import com.Javarecruit.Dao.HrDao;
 import com.Javarecruit.pojo.Hr;
+import com.Javarecruit.pojo.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -43,5 +44,17 @@ public class HrDaoImpl extends BaseDao implements HrDao {
             closeAll(con, ps, rs);
         }
         return h;
+    }
+
+    /**
+     * 修改hr信息
+     * @param h hr实体类
+     * @return 确认信息
+     */
+    @Override
+    public int reviseHr(Hr h) {
+        String sql = "update Hr set cshow = ? , company = ? ,phone = ? ,  address=?  WHERE companyid = ?";
+        Object[] o = {h.getCshow(),h.getCompany(),h.getPhone(),h.getCaddress(),h.getCompanyid()};
+        return exceuteUpdate(sql,o);
     }
 }

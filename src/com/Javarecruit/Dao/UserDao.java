@@ -5,7 +5,7 @@ import com.Javarecruit.pojo.User;
 
 public interface UserDao {
     /**
-     * 修改
+     * 修改用户信息
      * @return 返回确认数值
      */
     int revise(User u);
