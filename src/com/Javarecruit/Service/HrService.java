@@ -15,4 +15,11 @@ public interface HrService {
      * @return 修改提示
      */
     int reviseHr(Hr h);
+
+    /**
+     * HR登录
+     * @param phone 手机号
+     * @return
+     */
+    String login(String phone);
 }

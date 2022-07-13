@@ -18,4 +18,14 @@ public class HrServiceImpl implements HrService {
         HrDao hrDao = new HrDaoImpl();
         return hrDao.reviseHr(h);
     }
+
+    @Override
+    public String login(String phone) {
+        HrDao hd = new HrDaoImpl();
+        Hr querybynamepwd = hd.querybyphone(phone);
+        if (querybynamepwd.getPhone()==null){
+            return "失败";
+        }
+        return "成功";
+    }
 }
