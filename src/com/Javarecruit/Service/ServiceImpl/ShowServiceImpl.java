@@ -46,6 +46,6 @@ public class ShowServiceImpl implements ShowService {
     @Override
     public int revise(Show s) {
         ShowDaoImpl sdd=new ShowDaoImpl();
-        return sdd.ReviseShow(s);
+        return sdd.reviseShow(s);
     }
 }
