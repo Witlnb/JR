@@ -6,6 +6,11 @@ import com.Javarecruit.Service.HrService;
 import com.Javarecruit.pojo.Hr;
 
 public class HrServiceImpl implements HrService {
+    /**
+     * 人事注册
+     * @param hr
+     * @return
+     */
     @Override
     public int enroll(Hr hr) {
         HrDao hrDao = new HrDaoImpl();
@@ -19,6 +24,11 @@ public class HrServiceImpl implements HrService {
         return hrDao.reviseHr(h);
     }
 
+    /**
+     * HR登录
+     * @param phone 手机号
+     * @return
+     */
     @Override
     public String login(String phone) {
         HrDao hd = new HrDaoImpl();

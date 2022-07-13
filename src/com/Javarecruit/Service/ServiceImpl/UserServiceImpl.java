@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 注册
+     * 用户注册
      * @param user
      * @return
      */
@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
     }
 
     /**
-     * 登录
+     * 用户登录
      * @param uname 用户名
      * @param pwd 用户密码
      * @return

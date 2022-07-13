@@ -12,11 +12,13 @@
     <title>Title</title>
 </head>
 <body>
-<c:forEach items="${show}" var="show">
-    <p>${show.title}<br>
-    ${show.show}<br>
-    ${show.company}<br>
-    ${show.money}</p>
-</c:forEach>
+    <c:forEach items="${show}" var="show">
+        ${show.sid}<br>
+        ${show.title}<br>
+        ${show.show}<br>
+        ${show.company}<br>
+        ${show.companyid}<br>
+        ${show.money}<br>
+    </c:forEach>
 </body>
 </html>

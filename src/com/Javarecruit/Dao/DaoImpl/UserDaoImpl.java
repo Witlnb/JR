@@ -37,7 +37,7 @@ public class UserDaoImpl extends BaseDao implements UserDao  {
     }
 
     /**
-     *
+     * 查询
      * @param uname 用户名
      * @param pwd 密码
      * @return

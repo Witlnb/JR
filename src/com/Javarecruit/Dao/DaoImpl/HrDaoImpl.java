@@ -11,7 +11,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class HrDaoImpl extends BaseDao implements HrDao {
-
+    /**
+     * 新增
+     * @param hr
+     * @return
+     */
     @Override
     public int addByHr(Hr hr) {
         String sql = "insert into hr(cshow,company,phone,caddress,hmoney) values(?,?,?,?,?)";
@@ -20,6 +24,11 @@ public class HrDaoImpl extends BaseDao implements HrDao {
         return insert;
     }
 
+    /**
+     * 查询
+     * @param phone 手机号
+     * @return
+     */
     @Override
     public Hr querybyphone(String phone) {
         Connection con = conn();
