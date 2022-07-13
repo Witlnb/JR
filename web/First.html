@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        html,body{
+            margin:0;
+            height:100%;
+            width: auto;
+            Background-size:cover
+        }
+        #head{
+            width: 100%;
+            height: 30px;
+            background-color: #4d4d4f;
+            position: fixed;
+        }
+        .headTow{
+            width: 100%;
+            height: 80px;
+            background-image: linear-gradient(#759bda, #abc3e3,white);
+            opacity: 80%;
+            position: fixed;
+            top: 30px;
+        }
+        .show{
+            width: 200px;
+            position: relative;
+            left: 180px;
+            z-index: 1;
+            color: orange;
+            filter: drop-shadow(40px 40px yellow)
+        }
+        .logo{
+            width: 100px;
+            position: relative;
+            left: 200px;
+            z-index: 1;
+            opacity: 100%;
+        }
+        #shows{
+            height: 20px;
+            position: fixed;
+            top: -37px;
+            left: -90px;
+            background-color: #4d4d4f;
+        }
+
+        .searchOne{
+            border-radius: 10px;
+            position: relative;
+            left: 38%;
+            top: 45px;
+            height: 20px;
+            width: 300px;
+            font-size: 10px;
+            color: #0a0a0a;
+            z-index: 5;
+            border-color: #ebf5eb;
+            opacity: 50%;
+        }
+        .searchSm{
+            background-image: url("Img/搜索框21px.png");
+            position: relative;
+            width: 21px;
+            height: 21px;
+            top: 47px;
+            left: 450px;
+            z-index: 6;
+            border: none;
+            opacity: 50%;
+
+        }
+        #formOne{
+            position: relative;
+        }
+        #login{
+            position: relative;
+            top: -23px;
+            left: 80%;
+        }
+        #register{
+            position: relative;
+            top: -46px;
+            left: 76.7%;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript" src="JS/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="JS/core.js"></script>
+<div id="head"></div>
+<div id="shows"><img src="Img/宣传语.png" class="show"></div>
+<div class="headTow"><img src="Img/logo透明.png" class="logo"></div>
+<form action="" method="post" id="formOne">
+    <input type="text" class="searchOne" name="搜索" placeholder="请输入您查询的工作或公司">
+    <input type="submit" class="searchSm" value=" ">
+</form>
+<form action="" method="post" id="login">
+    <input type="submit" name="login" value="登录">
+</form>
+<form action="" method="post" id="register">
+    <input type="submit" name="register" value="注册">
+</form>
+</body>
+</html>

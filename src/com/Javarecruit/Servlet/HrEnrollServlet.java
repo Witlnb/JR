@@ -16,16 +16,22 @@ public class HrEnrollServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        request.getParameter("company");
-        request.getParameter("cshow");
-        request.getParameter("hmoney");
-        request.getParameter("caddress");
-        request.getParameter("phone");
+        String company = request.getParameter("company");
+        String cshow = request.getParameter("cshow");
+        String hmoney = request.getParameter("hmoney");
+        String caddress = request.getParameter("caddress");
+        String phone = request.getParameter("phone");
+        int parseInt = Integer.parseInt(hmoney);
         Hr hr = new Hr();
+        hr.setCompany(company);
+        hr.setCshow(cshow);
+        hr.setHmoney(parseInt);
+        hr.setCaddress(caddress);
+        hr.setPhone(phone);
         HrService hrService = new HrServiceImpl();
-        String s = hrService.enroll(hr);
-        if (s.equals("成功")){
-            request.getRequestDispatcher("").forward(request,response);
+        int enroll = hrService.enroll(hr);
+        if (enroll!=0){
+            request.getRequestDispatcher("HrLogin.jsp").forward(request,response);
         }else {
             response.sendRedirect("HrEnroll.jsp");
         }

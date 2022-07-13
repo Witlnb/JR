@@ -7,10 +7,10 @@ import com.Javarecruit.pojo.Hr;
 
 public class HrServiceImpl implements HrService {
     @Override
-    public String enroll(Hr hr) {
+    public int enroll(Hr hr) {
         HrDao hrDao = new HrDaoImpl();
-        hrDao.addByHr(hr);
-        return "成功";
+        int hr1 = hrDao.addByHr(hr);
+        return hr1;
     }
 
     @Override

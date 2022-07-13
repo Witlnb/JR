@@ -9,7 +9,7 @@ public interface HrService {
      * @param hr
      * @return
      */
-    String enroll(Hr hr);
+    int enroll(Hr hr);
     /**
      * 修改hr信息
      * @return 修改提示
