@@ -16,9 +16,9 @@ public class ShowServiceImpl implements ShowService {
     }
 //根据薪资展示的方法
     @Override
-    public Show money(Integer money) {
+    public List<Show> money(Integer money) {
         ShowDaoImpl sdi=new ShowDaoImpl();
-        Show s=sdi.queryMoney(money);
+        List<Show> s=sdi.queryMoney(money);
         return s;
     }
 //根据标签展示的方法
@@ -30,16 +30,16 @@ public class ShowServiceImpl implements ShowService {
     }
 //根据标签和薪资展示的方法
     @Override
-    public Show titleMoney(Integer money, String title) {
+    public List<Show> titleMoney(Integer money, String title) {
         ShowDaoImpl ssd=new ShowDaoImpl();
-        Show sh=ssd.queryMoneyTitle(money,title);
+        List<Show> sh=ssd.queryMoneyTitle(money,title);
         return sh;
     }
 //根据薪资的范围展示的方法
     @Override
-    public Show twoMoney(Integer one, Integer two) {
+    public List<Show> twoMoney(Integer one, Integer two) {
         ShowDaoImpl sdd=new ShowDaoImpl();
-        Show sw=sdd.queryTwoMoney(one,two);
+        List<Show> sw=sdd.queryTwoMoney(one,two);
         return sw;
     }
 
