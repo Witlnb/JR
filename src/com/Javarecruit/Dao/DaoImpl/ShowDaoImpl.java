@@ -139,4 +139,16 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         }
         return ss;
     }
+
+    /**
+     * 修改展示信息
+     * @param s 展示实体类
+     * @return  修改确认
+     */
+    @Override
+    public int reviseShow(Show s) {
+        String sql = "update Hr set title = ? , company = ? ,show = ? ,money = ?  WHERE companyid = ? and sid=?";
+        Object[] o = {s.getTitle(),s.getCompany(),s.getShow(),s.getMoney(),s.getCompanyid(),s.getSid()};
+        return exceuteUpdate(sql,o);
+    }
 }
