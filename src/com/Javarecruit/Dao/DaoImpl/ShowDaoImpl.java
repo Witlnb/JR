@@ -30,6 +30,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
                 s.setShow(rs.getString("show"));
                 s.setCompany(rs.getString("company"));
                 s.setCompanyid(rs.getInt("companyid"));
+                s.setMoney(rs.getInt("money"));
                 sh.add(s);
             }
         } catch (SQLException e) {
