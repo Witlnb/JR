@@ -15,4 +15,6 @@ public interface ShowDao {
     public Show queryMoneyTitle(Integer money,String title);
     //根据薪资的范围展示的方法
     public Show queryTwoMoney(Integer one,Integer two);
+    //修改展示信息
+    public int reviseShow(Show s);
 }

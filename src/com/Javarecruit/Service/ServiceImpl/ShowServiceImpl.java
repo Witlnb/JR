@@ -42,4 +42,10 @@ public class ShowServiceImpl implements ShowService {
         Show sw=sdd.queryTwoMoney(one,two);
         return sw;
     }
+
+    @Override
+    public int revise(Show s) {
+        ShowDaoImpl sdd=new ShowDaoImpl();
+        return sdd.ReviseShow(s);
+    }
 }
