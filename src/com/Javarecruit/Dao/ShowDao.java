@@ -18,4 +18,10 @@ public interface ShowDao {
     //修改展示信息
     public int reviseShow(Show s);
 
+    /**
+     * 新增
+     * @param s
+     * @return
+     */
+    int recruit(Show s);
 }

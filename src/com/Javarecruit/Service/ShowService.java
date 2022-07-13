@@ -21,4 +21,10 @@ public interface ShowService {
      * @return 修改提示
      */
     int revise(Show s);
+    /**
+     * 发布招聘信息
+     * @param s 展示对象
+     * @return 发布成功和失败
+     */
+    int addrecruit(Show s);
 }

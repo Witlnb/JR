@@ -1,6 +1,7 @@
 package com.Javarecruit.Service.ServiceImpl;
 
 import com.Javarecruit.Dao.DaoImpl.ShowDaoImpl;
+import com.Javarecruit.Dao.ShowDao;
 import com.Javarecruit.Service.ShowService;
 import com.Javarecruit.pojo.Show;
 
@@ -47,5 +48,17 @@ public class ShowServiceImpl implements ShowService {
     public int revise(Show s) {
         ShowDaoImpl sdd=new ShowDaoImpl();
         return sdd.reviseShow(s);
+    }
+
+    /**
+     * 发布招聘信息
+     * @param s 展示对象
+     * @return
+     */
+    @Override
+    public int addrecruit(Show s) {
+        ShowDao sd = new ShowDaoImpl();
+        int sd1 = sd.recruit(s);
+        return sd1;
     }
 }
