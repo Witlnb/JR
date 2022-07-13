@@ -14,7 +14,7 @@ public interface UserService {
      * @param user
      * @return
      */
-    String enroll(User user);
+    int enroll(User user);
 
     /**
      * 登录

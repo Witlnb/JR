@@ -22,10 +22,10 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public String enroll(User user) {
+    public int enroll(User user) {
         UserDao userDao = new UserDaoImpl();
-        userDao.addByUser(user);
-        return "成功";
+        int user1 = userDao.addByUser(user);
+        return user1;
     }
 
     /**
