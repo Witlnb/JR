@@ -152,4 +152,5 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         Object[] o = {s.getTitle(),s.getCompany(),s.getShow(),s.getMoney(),s.getCompanyid(),s.getSid()};
         return exceuteUpdate(sql,o);
     }
+
 }

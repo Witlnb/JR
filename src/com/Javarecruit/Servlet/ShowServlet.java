@@ -1,6 +1,8 @@
 package com.Javarecruit.Servlet;
 
 import com.Javarecruit.Service.ServiceImpl.ShowServiceImpl;
+import com.Javarecruit.Service.ServiceImpl.UserServiceImpl;
+import com.Javarecruit.Service.UserService;
 import com.Javarecruit.pojo.Show;
 
 import javax.servlet.ServletException;
@@ -14,6 +16,7 @@ import java.util.List;
 
 @WebServlet(name = "ShowServlet",urlPatterns = {"/Test"})
 public class ShowServlet extends HttpServlet {
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
@@ -22,12 +25,21 @@ public class ShowServlet extends HttpServlet {
         ShowServiceImpl show=new ShowServiceImpl();
         List<Show> ssh=show.showAll();
         request.setAttribute("show",ssh);
-        System.out.println("asd");
+        String uname = request.getParameter("uname");
+        String upwd = request.getParameter("upwd");
+        UserService us=new UserServiceImpl();
+        String login = us.login(uname, upwd);
+        if ("成功".equals(login)){
+            request.getRequestDispatcher("showMore.jsp").forward(request,response);
+        }else{
+            response.sendRedirect("UserLogin.jsp");
+        }
         request.getRequestDispatcher("showMore.jsp").forward(request,response);
         out.flush();
         out.close();
     }
 
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doPost(request,response);
     }

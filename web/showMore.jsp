@@ -13,12 +13,10 @@
 </head>
 <body>
 <c:forEach items="${show}" var="show">
-    ${show.sid}<br>
-    ${show.title}<br>
+    <p>${show.title}<br>
     ${show.show}<br>
     ${show.company}<br>
-    ${show.companyid}<br>
-    ${show.money}<br>
+    ${show.money}</p>
 </c:forEach>
 </body>
 </html>
