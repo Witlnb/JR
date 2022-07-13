@@ -27,4 +27,10 @@ public interface ShowService {
      * @return 发布成功和失败
      */
     int addrecruit(Show s);
+
+    /**
+     * 展示招聘信息
+     * @return
+     */
+    List<Show> All();
 }

@@ -61,4 +61,15 @@ public class ShowServiceImpl implements ShowService {
         int sd1 = sd.recruit(s);
         return sd1;
     }
+
+    /**
+     * 展示招聘信息
+     * @return
+     */
+    @Override
+    public List<Show> All() {
+        ShowDao showDao = new ShowDaoImpl();
+        List<Show> showList = showDao.selectAll();
+        return showList;
+    }
 }

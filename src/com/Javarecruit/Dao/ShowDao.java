@@ -24,4 +24,10 @@ public interface ShowDao {
      * @return
      */
     int recruit(Show s);
+
+    /**
+     * 查询全部信息
+     * @return
+     */
+    List<Show> selectAll();
 }

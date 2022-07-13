@@ -174,4 +174,33 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         return num;
     }
 
+    /**
+     * 查询展示信息
+     * @return
+     */
+    @Override
+    public List<Show> selectAll() {
+        Connection connection=conn();
+        PreparedStatement preparedStatement=null;
+        ResultSet resultSet=null;
+        List<Show> showList = new ArrayList<Show>();
+        String sql ="select * from show";
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            resultSet=preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Show show = new Show();
+                show.setTitle(resultSet.getString("title"));
+                show.setCompany(resultSet.getString("company"));
+                show.setShow(resultSet.getString("show"));
+                show.setMoney(resultSet.getInt("money"));
+                showList.add(show);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            closeAll(connection,preparedStatement,resultSet);
+        }
+        return showList;
+    }
 }
