@@ -11,8 +11,13 @@
     <title>Title</title>
 </head>
 <body>
-<form action="Test" method="post">
-<input type="submit" value="这是标签" name="title">
+<form method="post" action="TitleTest">
+    标签<select name="title">
+        <option value="">请选择</option>
+        <option value="c加加">c++</option>
+        <option value="爪哇">java</option>
+    </select>
+    <input value="查询" type="submit">
 </form>
 </body>
 </html>
