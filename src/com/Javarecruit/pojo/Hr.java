@@ -12,13 +12,13 @@ public class Hr {
     //地址
     private String caddress;
     //预计薪资
-    private Integer hmoney;
+    private int hmoney;
 
-    public Integer getHmoney() {
+    public int getHmoney() {
         return hmoney;
     }
 
-    public void setHmoney(Integer hmoney) {
+    public void setHmoney(int hmoney) {
         this.hmoney = hmoney;
     }
 
