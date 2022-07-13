@@ -11,17 +11,34 @@
     <title>Title</title>
 </head>
 <body>
+<script type="text/javascript" src="JS/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="JS/MulJq.js"></script>
 <form action="ReviseUserServlet" method="post">
-用户名    身份证   性别
-    用户编号<input type="text" value="1" name="uid">
-密码<input type="text" name="upwd">
-手机号<input type="text" name="phone">
-权限<input type="text" name="mark">
-邮箱<input type="text" name="email">
-学历<input type="text" name="study">
-工作经验<input type="text" name="job">
-住址<input type="text" name="address">
-简历<input type="text" name="personal">
+用户名:    身份证:   性别:   用户编号:
+    密码<input type="text" name="upwd">
+    <span></span>
+    <br>
+    手机号<input type="text" name="phone">
+    <span></span>
+    <br>
+    权限<input type="text" name="mark">
+    <span></span>
+    <br>
+    邮箱<input type="text" name="email">
+    <span></span>
+    <br>
+    学历<input type="text" name="study">
+    <span></span>
+    <br>
+    工作经验<input type="text" name="job">
+    <span></span>
+    <br>
+    住址<input type="text" name="address">
+    <span></span>
+    <br>
+    简历<input type="text" name="personal">
+    <span></span>
+    <br>
     <input type="submit" value="提交">
 </form>
 </body>
