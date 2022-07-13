@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="UserServlet" method="post">
+    <form action="Test" method="post">
         用户名:<input type="text" name="uname"><br>
         密  码:<input type="password" name="upwd"><br>
         <input type="submit" value="登录">
