@@ -18,7 +18,7 @@ public class UserDaoImpl extends BaseDao implements UserDao  {
      */
     @Override
     public int revise(User u) {
-        String sql = "update `user` set upwd = ? , phone = ? ,email = ? , study=? , job=? , address=? , personal = ? WHERE uid = ?;";
+        String sql = "update `user` set upwd = ? , phone = ? ,email = ? , study=? , job=? , address=? , personal = ? WHERE uid = ?";
         Object[] o = {u.getUpwd(),u.getPhone(),u.getEmail(),u.getStudy(),u.getJob(),u.getAddress(),u.getPersonal(),u.getUid()};
         return exceuteUpdate(sql,o);
     }

@@ -12,4 +12,10 @@ public class HrServiceImpl implements HrService {
         hrDao.addByHr(hr);
         return "成功";
     }
+
+    @Override
+    public int reviseHr(Hr h) {
+        HrDao hrDao = new HrDaoImpl();
+        return hrDao.reviseHr(h);
+    }
 }

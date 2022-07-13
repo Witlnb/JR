@@ -40,6 +40,8 @@ public class ReviseUserServlet extends HttpServlet {
         UserServiceImpl uu =  new UserServiceImpl();
         PrintWriter out = response.getWriter();
         out.println(uu.revise(u));
+        out.flush();
+        out.close();
     }
 
     @Override
