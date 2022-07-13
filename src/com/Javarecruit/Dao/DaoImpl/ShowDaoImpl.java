@@ -65,28 +65,30 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
     }
 //根据标签展示的方法
     @Override
-    public Show queryTitle(String title) {
+    public List<Show> queryTitle(String title) {
         Connection con=conn();
         PreparedStatement ps=null;
         ResultSet rs=null;
-        Show ss=new Show();
+        List<Show> sh=new ArrayList<Show>();
         String sql="select * from `show` where title=?";
         try{
             ps=con.prepareStatement(sql);
             ps.setString(1,title);
             rs=ps.executeQuery();
-            if(rs.next()){
+            while(rs.next()){
+                Show ss=new Show();
                 ss.setSid(rs.getInt("sid"));
                 ss.setTitle(rs.getString("title"));
                 ss.setShow(rs.getString("show"));
                 ss.setCompany(rs.getString("company"));
                 ss.setCompanyid(rs.getInt("companyid"));
                 ss.setMoney(rs.getInt("money"));
+                sh.add(ss);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return ss;
+        return sh;
     }
 //根据薪资和标签展示的方法
     @Override

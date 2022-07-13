@@ -10,7 +10,7 @@ public interface ShowDao {
     //根据薪资展示的方法；
     public Show queryMoney(Integer money);
     //根据标签展示的方法；
-    public Show queryTitle(String title);
+    List<Show> queryTitle(String title);
     //根据薪资和标签展示的方法
     public Show queryMoneyTitle(Integer money,String title);
     //根据薪资的范围展示的方法

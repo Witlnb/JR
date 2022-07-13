@@ -23,9 +23,9 @@ public class ShowServiceImpl implements ShowService {
     }
 //根据标签展示的方法
     @Override
-    public Show title(String title) {
+    public List<Show> title(String title) {
         ShowDaoImpl sd=new ShowDaoImpl();
-        Show ss=sd.queryTitle(title);
+        List<Show> ss=sd.queryTitle(title);
         return ss;
     }
 //根据标签和薪资展示的方法
@@ -46,6 +46,6 @@ public class ShowServiceImpl implements ShowService {
     @Override
     public int revise(Show s) {
         ShowDaoImpl sdd=new ShowDaoImpl();
-        return sdd.ReviseShow(s);
+        return sdd.reviseShow(s);
     }
 }

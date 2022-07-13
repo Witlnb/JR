@@ -11,7 +11,7 @@ public interface ShowService {
     //根据标签展示的方法
     Show money(Integer money);
     //根据标签展示的方法
-    Show title(String title);
+    List<Show> title(String title);
     //根据标签和薪资展示的方法
     Show titleMoney(Integer money,String title);
     //根据薪资的范围展示的方法
