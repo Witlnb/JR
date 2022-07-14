@@ -156,7 +156,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
      */
     @Override
     public int reviseShow(Show s) {
-        String sql = "update Hr set title = ? , company = ? ,show = ? ,money = ?  WHERE companyid = ? and sid=?";
+        String sql = "update Hr set title = ? , company = ? ,information = ? ,money = ?  WHERE companyid = ? and sid=?";
         Object[] o = {s.getTitle(),s.getCompany(),s.getInformation(),s.getMoney(),s.getCompanyid(),s.getSid()};
         return exceuteUpdate(sql,o);
     }
@@ -168,7 +168,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
      */
     @Override
     public int recruit(Show s) {
-        String sql="insert into show(title,show,company,companyid) values(?,?,?,?)";
+        String sql="insert into show(title,information,company,companyid) values(?,?,?,?)";
         Object[] o={s.getTitle(),s.getInformation(),s.getCompany(),s.getCompanyid()};
         int num=exceuteUpdate(sql,o);
         return num;
