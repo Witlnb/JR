@@ -11,8 +11,10 @@
     <title>注册</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="Css/UserEnroll.css"  rel="stylesheet"  type="text/css"  />
+    <link href="Css/UserEnroll.css"  rel="stylesheet"  type="text/css"/>
 </head>
+<script src="JS/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script src="JS/MulJq.js" type="text/javascript"></script>
 <body>
 <div id="loginDiv">
     <form action="EnrollServlet" method="post">
@@ -49,7 +51,5 @@
     </form>
 
 </div>
-<script src="JS/jquery-3.6.0.js" type="text/javascript"></script>
-<script src="JS/MulJq.js" type="text/javascript"></script>
 </body>
 </html>
