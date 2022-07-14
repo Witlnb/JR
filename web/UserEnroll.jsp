@@ -8,39 +8,48 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>注册</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Css/UserEnroll.css"  rel="stylesheet"  type="text/css"/>
 </head>
+<script src="JS/jquery-3.6.0.min.js" type="text/javascript"></script>
+<script src="JS/MulJq.js" type="text/javascript"></script>
 <body>
+<div id="loginDiv">
     <form action="EnrollServlet" method="post">
-        用户名:<input type="text" name="uname"><br>
-        密码:<input type="password" name="upwd"><br>
-        手机号:<input type="tel" name="phone"><br>
-        邮箱:<input type="email" name="email"><br>
-        身份证号:<input type="text" name="nid"><br>
-        学历:<select name="study">
-            <option value="">请选择</option>
+        <h1>注册</h1>
+        <p>用&nbsp;&nbsp;户&nbsp;&nbsp;名:<input name="id" type="text" autofocus required><label></label></p>
+
+        <p>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:<input name="upwd" type="password" required><label></label></p>
+
+        <p>手&nbsp;&nbsp;机&nbsp;&nbsp;号:<input name="phone" type="tel" required><label></label></p>
+        <p>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:<input name="email" type="email" required><label></label></p>
+        <p>身份证号:<input name="nid" type="text" required><label></label></p>
+        <p>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历:<select name="study" required><option value="" selected="selected">请选择</option>
             <option value="初中及以下">初中及以下</option>
             <option value="高中">高中</option>
             <option value="中专/中技">中专/中技</option>
             <option value="大专">大专</option>
             <option value="本科">本科</option>
             <option value="硕士">硕士</option>
-            <option value="博士">博士</option>
-        </select><br>
-        工作经验:<select name="job">
-            <option value="">请选择</option>
+            <option value="博士">博士</option></select><label></label></p>
+        <p>工作经验:<select name="job" required><option value="" selected="selected">请选择</option>
             <option value="无经验">无经验</option>
             <option value="一年以下">一年以下</option>
             <option value="1-3年">1-3年</option>
             <option value="3-5年">3-5年</option>
             <option value="5-10年">5-10年</option>
-            <option value="10年以上">10年以上</option>
-        </select><br>
-        性别:男<input type="radio" name="sex" value="男">
-        女<input type="radio" name="sex" value="女"><br>
-        地址:<input type="text" name="address"><br>
-        简历:<input type="file" name="personal"><br>
-        <input type="submit" value="注册">
+            <option value="10年以上">10年以上</option></select><label></label></p>
+        <p>性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别:<input name="sex" type="radio" value="男">男<input name="sex" type="radio" value="女">女<label></label></p>
+        <p>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址:<input name="address" type="text" required><label></label></p>
+        <p>简&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历:<input name="personal" type="file" required><label></label></p>
+        <p style="text-align: center;">
+            <input  type="submit" class="button" value="提交">
+            <input type="reset" class="button" value="重置">
+        </p>
     </form>
+
+</div>
 </body>
 </html>
