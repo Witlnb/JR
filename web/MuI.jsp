@@ -16,30 +16,32 @@
 <form action="ReviseUserServlet" method="post">
 用户名:    身份证:   性别:   用户编号:
     密码<input type="text" name="upwd">
-    <span></span>
+    <span class="spidOne">one</span>
     <br>
     手机号<input type="text" name="phone">
-    <span></span>
+    <span class="spid"></span>
     <br>
     权限<input type="text" name="mark">
-    <span></span>
+    <span class="spid"></span>
     <br>
     邮箱<input type="text" name="email">
-    <span></span>
+    <span class="spid"></span>
     <br>
     学历<input type="text" name="study">
-    <span></span>
+    <span class="spid"></span>
     <br>
     工作经验<input type="text" name="job">
-    <span></span>
+    <span class="spid"></span>
     <br>
     住址<input type="text" name="address">
-    <span></span>
+    <span class="spid"></span>
     <br>
     简历<input type="text" name="personal">
-    <span></span>
+    <span class="spid"></span>
     <br>
+    <input type="button" value="提交" onclick="judge()" name="button">
     <input type="submit" value="提交">
+    <span></span>
 </form>
 </body>
 </html>

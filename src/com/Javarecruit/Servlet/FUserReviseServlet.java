@@ -54,7 +54,7 @@ public class FUserReviseServlet extends HttpServlet {
         }else if (job != null){
             u.setJob(job);
         }else if (address != null){
-            String add = "^.+ (区|镇).+ (路|街).+号.+号楼.+单元.+ (室|户).*$";
+            String add = "(?<province>[^省]+省|.+自治区)(?<city>[^自治州]+自治州|[^市]+市|[^盟]+盟|[^地区]+地区|.+区划)(?<county>[^市]+市|[^县]+县|[^旗]+旗|.+区)?(?<town>[^区]+区|.+镇)?(?<village>.*)";
             if(address.matches(add)){
                 out.println("ok");
             }else {
@@ -62,9 +62,11 @@ public class FUserReviseServlet extends HttpServlet {
             }
             u.setAddress(address);
         }else if (personal != null){
-            System.out.println("ok");
+                out.println("ok");
         }else{
+             out.println("输入错误请重新刷新页面!");
         }
+
         out.flush();
         out.close();
     }

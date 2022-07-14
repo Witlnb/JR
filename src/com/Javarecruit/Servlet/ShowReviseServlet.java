@@ -16,19 +16,18 @@ public class ShowReviseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=utf-8");
         Integer sid = Integer.parseInt(request.getParameter("sid"));
         Integer companyid = Integer.parseInt(request.getParameter("companyid"));
         Integer money = Integer.parseInt(request.getParameter("money"));
         String title = request.getParameter("title");
-        String show = request.getParameter("show");
+        String information = request.getParameter("information");
         String company = request.getParameter("company");
         Show s = new Show();
         s.setCompany(company);
         s.setCompanyid(companyid);
         s.setSid(sid);
-        s.setInformation(show);
+        s.setInformation(information);
         s.setMoney(money);
         s.setTitle(title);
         ShowServiceImpl ss = new ShowServiceImpl();
