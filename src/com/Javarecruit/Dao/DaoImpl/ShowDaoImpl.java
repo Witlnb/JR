@@ -168,8 +168,8 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
      */
     @Override
     public int recruit(Show s) {
-        String sql="insert into `show` values(0,?,?,?,?)";
-        Object[] o={s.getTitle(),s.getInformation(),s.getCompany(),s.getCompanyid()};
+        String sql="insert into `show` values(0,?,?,?,?,?)";
+        Object[] o={s.getTitle(),s.getInformation(),s.getCompany(),s.getCompanyid(),s.getMoney()};
         int num=exceuteUpdate(sql,o);
         return num;
     }

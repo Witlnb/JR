@@ -23,12 +23,15 @@ public class ShowAddServlet extends HttpServlet {
         String show = request.getParameter("show");
         String company = request.getParameter("company");
         String companyid = request.getParameter("companyid");
+        String money = request.getParameter("money");
+        int i = Integer.parseInt(money);
         int parseInt = Integer.parseInt(companyid);
         Show s=new Show();
         s.setTitle(title);
         s.setInformation(show);
         s.setCompany(company);
         s.setCompanyid(parseInt);
+        s.setMoney(i);
         ShowService ss=new ShowServiceImpl();
         int addrecruit = ss.addrecruit(s);
         if (addrecruit!=0){
