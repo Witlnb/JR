@@ -25,7 +25,7 @@ public class ShowAddServlet extends HttpServlet {
         int parseInt = Integer.parseInt(companyid);
         Show s=new Show();
         s.setTitle(title);
-        s.setShow(show);
+        s.setInformation(show);
         s.setCompany(company);
         s.setCompanyid(parseInt);
         ShowService ss=new ShowServiceImpl();

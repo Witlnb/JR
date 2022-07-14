@@ -28,7 +28,7 @@ public class ShowReviseServlet extends HttpServlet {
         s.setCompany(company);
         s.setCompanyid(companyid);
         s.setSid(sid);
-        s.setShow(show);
+        s.setInformation(show);
         s.setMoney(money);
         s.setTitle(title);
         ShowServiceImpl ss = new ShowServiceImpl();
