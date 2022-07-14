@@ -38,9 +38,10 @@ public class UserServiceImpl implements UserService {
     public String login(String uname, String pwd) {
         UserDao ud=new UserDaoImpl();
         User name = ud.querybynamepwd(uname, pwd);
-        if (name!=null){
+        if (name==null){
+            return "失败";
+        }else{
             return "成功";
         }
-        return "失败";
     }
 }

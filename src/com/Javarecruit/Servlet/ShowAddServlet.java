@@ -31,7 +31,7 @@ public class ShowAddServlet extends HttpServlet {
         ShowService ss=new ShowServiceImpl();
         int addrecruit = ss.addrecruit(s);
         if (addrecruit!=0){
-            request.getRequestDispatcher("").forward(request,response);
+            out.print("你好");
         }else{
             response.sendRedirect("ShowInsert.jsp");
         }

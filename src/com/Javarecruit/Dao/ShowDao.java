@@ -20,8 +20,8 @@ public interface ShowDao {
 
     /**
      * 新增
-     * @param s
-     * @return
+     * @param s 展示招聘信息对象
+     * @return 受影响行数
      */
     int recruit(Show s);
 
@@ -30,4 +30,5 @@ public interface ShowDao {
      * @return
      */
     List<Show> selectAll();
+
 }

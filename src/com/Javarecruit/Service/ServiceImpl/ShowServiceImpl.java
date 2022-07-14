@@ -59,7 +59,11 @@ public class ShowServiceImpl implements ShowService {
     public int addrecruit(Show s) {
         ShowDao sd = new ShowDaoImpl();
         int sd1 = sd.recruit(s);
-        return sd1;
+        if (sd1==0){
+            return 0;
+        }else{
+            return 1;
+        }
     }
 
     /**
