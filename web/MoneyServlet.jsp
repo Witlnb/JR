@@ -14,7 +14,7 @@
 <body>
 <c:forEach items="${money}" var="money">
     ${money.title}
-    ${money.show}
+    ${money.information}
     ${money.company}
     ${money.money}<br>
 </c:forEach>

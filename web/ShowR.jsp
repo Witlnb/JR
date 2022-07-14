@@ -15,7 +15,7 @@
     <c:forEach items="${showList}" var="list">
         <p>${list.title}</p>
         <p>${list.company}</p>
-        <p>${list.show}</p>
+        <p>${list.information}</p>
         <p>${list.money}</p>
     </c:forEach>
 </body>

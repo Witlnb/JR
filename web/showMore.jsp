@@ -15,7 +15,7 @@
     <c:forEach items="${show}" var="show">
         ${show.sid}<br>
         ${show.title}<br>
-        ${show.show}<br>
+        ${show.information}<br>
         ${show.company}<br>
         ${show.companyid}<br>
         ${show.money}<br>
