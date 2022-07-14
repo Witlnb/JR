@@ -9,7 +9,6 @@ $(document).ready(function () {
                 $("input[name=upwd]").next().text(result);
             },
             "error":function (result) {
-                $("input[name=upwd]").next().text(result);
             }
         });
     });
@@ -17,7 +16,7 @@ $(document).ready(function () {
         $.ajax({
             "url":"FUserReviseServlet",
             "type":"get",
-            "data":"upwd="+$(this).val(),
+            "data":"phone="+$(this).val(),
             "dateType":"text",
             "success" :function (result){
                 $("input[name=phone]").next().text(result);
@@ -30,7 +29,7 @@ $(document).ready(function () {
         $.ajax({
             "url":"FUserReviseServlet",
             "type":"get",
-            "data":"upwd="+$(this).val(),
+            "data":"mark="+$(this).val(),
             "dateType":"text",
             "success" :function (result){
                 $("input[name=mark]").next().text(result);
@@ -43,7 +42,7 @@ $(document).ready(function () {
         $.ajax({
             "url":"FUserReviseServlet",
             "type":"get",
-            "data":"upwd="+$(this).val(),
+            "data":"email="+$(this).val(),
             "dateType":"text",
             "success" :function (result){
                 $("input[name=email]").next().text(result);
@@ -56,7 +55,7 @@ $(document).ready(function () {
         $.ajax({
             "url":"FUserReviseServlet",
             "type":"get",
-            "data":"upwd="+$(this).val(),
+            "data":"study="+$(this).val(),
             "dateType":"text",
             "success" :function (result){
                 $("input[name=study]").next().text(result);
@@ -69,7 +68,7 @@ $(document).ready(function () {
         $.ajax({
             "url":"FUserReviseServlet",
             "type":"get",
-            "data":"upwd="+$(this).val(),
+            "data":"job="+$(this).val(),
             "dateType":"text",
             "success" :function (result){
                 $("input[name=job]").next().text(result);
@@ -82,7 +81,7 @@ $(document).ready(function () {
         $.ajax({
             "url":"FUserReviseServlet",
             "type":"get",
-            "data":"upwd="+$(this).val(),
+            "data":"address="+$(this).val(),
             "dateType":"text",
             "success" :function (result){
                 $("input[name=address]").next().text(result);
@@ -95,7 +94,7 @@ $(document).ready(function () {
         $.ajax({
             "url":"FUserReviseServlet",
             "type":"get",
-            "data":"upwd="+$(this).val(),
+            "data":"personal="+$(this).val(),
             "dateType":"text",
             "success" :function (result){
                 $("input[name=personal]").next().text(result);
@@ -105,3 +104,41 @@ $(document).ready(function () {
         });
     });
 });
+function judge() {
+    var b = $(".spidOne").html();
+    b = b.toString();
+    b=b.replace(/\s+/g,"");
+    var c = "ok";
+    alert(c)
+    if (c==b){
+        $.ajax({
+            "url": "ReviseUserServlet",
+            "type": "get",
+            "data": {
+                "upwd": $("input[name=upwd]").val(), "phone": $("input[name=phone]").val()
+                , "mark": $("input[name=mark]").val(), "email": $("input[name=email]").val(),
+                "study": $("input[name=study]").val(), "job": $("input[name=job]").val()
+                , "address": $("input[name=address]").val(), "personal": $("input[name=personal]").val()
+            },
+            "dateType": "text",
+        });
+        window.location="ReviseUserServlet";
+    }else {
+        $("input[name=button]").next().text("请检查输入信息是否完整或者是否正确");
+    }
+    //     $.ajax({
+    //         "url":"ReviseUserServlet",
+    //         "type":"get",
+    //         "data": {"upwd":$("input[name=upwd]").val(),"phone":$("input[name=phone]").val()
+    //             ,"mark":$("input[name=mark]").val(),"email":$("input[name=email]").val(),
+    //             "study":$("input[name=study]").val(),"job":$("input[name=job]").val()
+    //         ,"address":$("input[name=address]").val(),"personal":$("input[name=personal]").val()},
+    //         "dateType":"text",
+    //         success:function(){
+    //                 window.location.href = 'ReviseUserServlet';
+    //         },
+    //         "error":function (result) {
+    //             $("input[name=button]").next().text("请检查输入信息是否完整或者是否正确");
+    //         }
+    // });
+}

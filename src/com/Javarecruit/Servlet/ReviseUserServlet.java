@@ -16,9 +16,12 @@ public class ReviseUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=utf-8");
-        Integer uid = Integer.parseInt(request.getParameter("uid"));
+        System.out.println("到这里了");
+        UserServiceImpl uu =  new UserServiceImpl();
+        PrintWriter out = response.getWriter();
+        User u = new User();
+//        Integer uid = Integer.parseInt(request.getParameter("uid"));
         String upwd = request.getParameter("upwd");
         String phone = request.getParameter("phone");
         String mark = request.getParameter("mark");
@@ -27,8 +30,8 @@ public class ReviseUserServlet extends HttpServlet {
         String job = request.getParameter("job");
         String address = request.getParameter("address");
         String personal = request.getParameter("personal");
-        User u = new User();
-        u.setUid(uid);
+        Integer a = 1;
+        u.setUid(a);
         u.setUpwd(upwd);
         u.setPhone(phone);
         u.setMark(mark);
@@ -37,9 +40,7 @@ public class ReviseUserServlet extends HttpServlet {
         u.setJob(job);
         u.setAddress(address);
         u.setPersonal(personal);
-        UserServiceImpl uu =  new UserServiceImpl();
-        PrintWriter out = response.getWriter();
-        out.println(uu.revise(u));
+        uu.revise(u);
         out.flush();
         out.close();
     }

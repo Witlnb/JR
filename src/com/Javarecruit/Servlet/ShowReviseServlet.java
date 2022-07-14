@@ -16,7 +16,6 @@ public class ShowReviseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=utf-8");
         Integer sid = Integer.parseInt(request.getParameter("sid"));
         Integer companyid = Integer.parseInt(request.getParameter("companyid"));
