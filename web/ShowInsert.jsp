@@ -20,6 +20,8 @@
         <br/>
         公司编号:<input type="text" name="companyid">
         <br/>
+        薪资:<input type="text" name="money">
+        <br/>
         <input type="submit" value="发布">
     </form>
 </body>

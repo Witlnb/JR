@@ -16,22 +16,26 @@ import java.io.PrintWriter;
 public class ShowAddServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         PrintWriter out=response.getWriter();
         String title = request.getParameter("title");
         String show = request.getParameter("show");
         String company = request.getParameter("company");
         String companyid = request.getParameter("companyid");
+        String money = request.getParameter("money");
+        int i = Integer.parseInt(money);
         int parseInt = Integer.parseInt(companyid);
         Show s=new Show();
         s.setTitle(title);
         s.setInformation(show);
         s.setCompany(company);
         s.setCompanyid(parseInt);
+        s.setMoney(i);
         ShowService ss=new ShowServiceImpl();
         int addrecruit = ss.addrecruit(s);
         if (addrecruit!=0){
-            request.getRequestDispatcher("").forward(request,response);
+            out.print("你好");
         }else{
             response.sendRedirect("ShowInsert.jsp");
         }

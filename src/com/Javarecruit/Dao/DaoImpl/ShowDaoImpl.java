@@ -163,13 +163,13 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
 
     /**
      * 新增展示信息
-     * @param s
+     * @param s 展示招聘信息对象
      * @return
      */
     @Override
     public int recruit(Show s) {
-        String sql="insert into show(title,information,company,companyid) values(?,?,?,?)";
-        Object[] o={s.getTitle(),s.getInformation(),s.getCompany(),s.getCompanyid()};
+        String sql="insert into `show` values(0,?,?,?,?,?)";
+        Object[] o={s.getTitle(),s.getInformation(),s.getCompany(),s.getCompanyid(),s.getMoney()};
         int num=exceuteUpdate(sql,o);
         return num;
     }
