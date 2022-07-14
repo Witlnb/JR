@@ -27,7 +27,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
                 Show s=new Show();
                 s.setSid(rs.getInt("sid"));
                 s.setTitle(rs.getString("title"));
-                s.setShow(rs.getString("show"));
+                s.setInformation(rs.getString("information"));
                 s.setCompany(rs.getString("company"));
                 s.setCompanyid(rs.getInt("companyid"));
                 s.setMoney(rs.getInt("money"));
@@ -54,7 +54,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
                 Show ss=new Show();
                 ss.setSid(rs.getInt("sid"));
                 ss.setTitle(rs.getString("title"));
-                ss.setShow(rs.getString("show"));
+                ss.setInformation(rs.getString("information"));
                 ss.setCompany(rs.getString("company"));
                 ss.setCompanyid(rs.getInt("companyid"));
                 ss.setMoney(rs.getInt("money"));
@@ -81,7 +81,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
                 Show ss=new Show();
                 ss.setSid(rs.getInt("sid"));
                 ss.setTitle(rs.getString("title"));
-                ss.setShow(rs.getString("show"));
+                ss.setInformation(rs.getString("information"));
                 ss.setCompany(rs.getString("company"));
                 ss.setCompanyid(rs.getInt("companyid"));
                 ss.setMoney(rs.getInt("money"));
@@ -109,7 +109,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
                 Show ss=new Show();
                 ss.setSid(rs.getInt("sid"));
                 ss.setTitle(rs.getString("title"));
-                ss.setShow(rs.getString("show"));
+                ss.setInformation(rs.getString("information"));
                 ss.setCompany(rs.getString("company"));
                 ss.setCompanyid(rs.getInt("companyid"));
                 ss.setMoney(rs.getInt("money"));
@@ -137,7 +137,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
                 Show ss=new Show();
                 ss.setSid(rs.getInt("sid"));
                 ss.setTitle(rs.getString("title"));
-                ss.setShow(rs.getString("show"));
+                ss.setInformation(rs.getString("information"));
                 ss.setCompany(rs.getString("company"));
                 ss.setCompanyid(rs.getInt("companyid"));
                 ss.setMoney(rs.getInt("money"));
@@ -192,7 +192,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
                 Show show = new Show();
                 show.setTitle(resultSet.getString("title"));
                 show.setCompany(resultSet.getString("company"));
-                show.setShow(resultSet.getString("show"));
+                show.setInformation(resultSet.getString("information"));
                 show.setMoney(resultSet.getInt("money"));
                 showList.add(show);
             }
