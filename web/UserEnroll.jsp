@@ -19,9 +19,9 @@
         <h1>注册</h1>
         <p>用&nbsp;&nbsp;户&nbsp;&nbsp;名:<input name="id" type="text" autofocus required><label></label></p>
 
-        <p>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:<input name="password" type="password" required><label></label></p>
+        <p>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:<input name="upwd" type="password" required><label></label></p>
 
-        <p>手&nbsp;&nbsp;机&nbsp;&nbsp;号:<input name="tel" type="phone" required><label></label></p>
+        <p>手&nbsp;&nbsp;机&nbsp;&nbsp;号:<input name="phone" type="tel" required><label></label></p>
         <p>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱:<input name="email" type="email" required><label></label></p>
         <p>身份证号:<input name="nid" type="text" required><label></label></p>
         <p>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历:<select name="study" required><option value="" selected="selected">请选择</option>
@@ -49,5 +49,7 @@
     </form>
 
 </div>
+<script src="JS/jquery-3.6.0.js" type="text/javascript"></script>
+<script src="JS/MulJq.js" type="text/javascript"></script>
 </body>
 </html>
