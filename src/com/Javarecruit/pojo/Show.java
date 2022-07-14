@@ -6,7 +6,7 @@ public class Show {
     //标签
     private String title;
     //招聘信息
-    private String show;
+    private String information;
     //公司名称
     private String company;
     //公司号
@@ -38,14 +38,13 @@ public class Show {
         this.title = title;
     }
 
-    public String getShow() {
-        return show;
+    public String getInformation() {
+        return information;
     }
 
-    public void setShow(String show) {
-        this.show = show;
+    public void setInformation(String information) {
+        this.information = information;
     }
-
     public String getCompany() {
         return company;
     }
