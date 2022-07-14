@@ -11,12 +11,12 @@
     <title>Title</title>
 </head>
 <body>
-<form action="HrReviseServlet" method="post">
+<form action="ShowReviseServlet" method="post">
 展示id:
 公司id:
 公司名称:
 标签<input type="text" name="title">
-招聘信息<textarea name="show" rows="5" cols="30"></textarea>
+招聘信息<textarea name="information" rows="5" cols="30"></textarea>
 期望薪资<input type="text" name="money">
 </form>
 </body>

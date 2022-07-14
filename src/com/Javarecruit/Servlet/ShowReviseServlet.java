@@ -22,13 +22,13 @@ public class ShowReviseServlet extends HttpServlet {
         Integer companyid = Integer.parseInt(request.getParameter("companyid"));
         Integer money = Integer.parseInt(request.getParameter("money"));
         String title = request.getParameter("title");
-        String show = request.getParameter("show");
+        String information = request.getParameter("information");
         String company = request.getParameter("company");
         Show s = new Show();
         s.setCompany(company);
         s.setCompanyid(companyid);
         s.setSid(sid);
-        s.setInformation(show);
+        s.setInformation(information);
         s.setMoney(money);
         s.setTitle(title);
         ShowServiceImpl ss = new ShowServiceImpl();
