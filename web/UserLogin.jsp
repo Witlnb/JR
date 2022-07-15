@@ -10,8 +10,8 @@
 <head>
     <title>Title</title>
 </head>
-<script type="text/javascript" src="JS/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="JS/MulJq.js"></script>
+<%--<script type="text/javascript" src="JS/jquery-3.6.0.min.js"></script>--%>
+<%--<script type="text/javascript" src="JS/MulJq.js"></script>--%>
 <body>
     <form action="UserServlet" method="post">
         用户名:<input type="text" name="uname"><br>

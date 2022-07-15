@@ -66,7 +66,6 @@ public class FUserReviseServlet extends HttpServlet {
         }else{
              out.println("输入错误请重新刷新页面!");
         }
-
         out.flush();
         out.close();
     }

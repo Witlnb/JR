@@ -2,6 +2,7 @@ package com.Javarecruit.Dao.DaoImpl;
 
 import com.Javarecruit.Dao.BaseDao;
 import com.Javarecruit.Dao.UserDao;
+import com.Javarecruit.pojo.Comment;
 import com.Javarecruit.pojo.User;
 
 import java.sql.Connection;
@@ -74,5 +75,13 @@ public class UserDaoImpl extends BaseDao implements UserDao  {
             closeAll(con, ps, rs);
         }
         return u;
+    }
+
+    @Override
+    public int addcomment(Comment c) {
+        String sql="insert into comment values(0,?,?,?)";
+        Object[] o={c.getCmtscontent(),c.getUid(),c.getCmtstime()};
+        int i =exceuteUpdate(sql,o);
+        return i;
     }
 }

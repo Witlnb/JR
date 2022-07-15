@@ -2,6 +2,7 @@ package com.Javarecruit.Servlet;
 
 import com.Javarecruit.Service.ServiceImpl.UserServiceImpl;
 import com.Javarecruit.Service.UserService;
+import com.Javarecruit.pojo.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,12 +22,11 @@ public class UserServlet extends HttpServlet {
         String uname = request.getParameter("uname");
         String upwd = request.getParameter("upwd");
         UserService us=new UserServiceImpl();
-        String login = us.login(uname, upwd);
-        System.out.println(login);
-        if ("老板登录成功".equals(login)){
+        User login = us.login(uname, upwd);
+        if (login.getMark().equals("是")){
 //            request.getRequestDispatcher("showMore.jsp").forward(request,response);
             out.print("老板");
-        }else if ("用户登录成功".equals(login)){
+        }else if (login.getMark().equals("否")){
             out.print("用户");
         }else{
            response.sendRedirect("UserLogin.jsp");

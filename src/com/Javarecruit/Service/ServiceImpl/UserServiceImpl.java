@@ -3,6 +3,7 @@ package com.Javarecruit.Service.ServiceImpl;
 import com.Javarecruit.Dao.DaoImpl.UserDaoImpl;
 import com.Javarecruit.Dao.UserDao;
 import com.Javarecruit.Service.UserService;
+import com.Javarecruit.pojo.Comment;
 import com.Javarecruit.pojo.User;
 
 public class UserServiceImpl implements UserService {
@@ -35,15 +36,22 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public String login(String uname, String pwd) {
+    public User login(String uname, String pwd) {
         UserDao ud=new UserDaoImpl();
         User name = ud.querybynamepwd(uname, pwd);
-        if (name==null){
-            return "失败";
-        }else if("是".equals(name.getMark())){
-            return "老板登录成功";
-        }else if ("否".equals(name.getMark())){
-            return "用户登录成功";
+        if (name!=null){
+            return name;
+        }else{
+            return null;
+        }
+    }
+
+    @Override
+    public String Comment(Comment c) {
+        UserDao ud=new UserDaoImpl();
+        int addcomment = ud.addcomment(c);
+        if (addcomment==0){
+           return "失败" ;
         }
         return "成功";
     }
