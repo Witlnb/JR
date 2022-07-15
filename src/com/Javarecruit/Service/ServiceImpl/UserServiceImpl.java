@@ -40,8 +40,11 @@ public class UserServiceImpl implements UserService {
         User name = ud.querybynamepwd(uname, pwd);
         if (name==null){
             return "失败";
-        }else{
-            return "成功";
+        }else if("是".equals(name.getMark())){
+            return "老板登录成功";
+        }else if ("否".equals(name.getMark())){
+            return "用户登录成功";
         }
+        return "成功";
     }
 }
