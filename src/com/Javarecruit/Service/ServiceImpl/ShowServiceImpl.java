@@ -98,6 +98,6 @@ public class ShowServiceImpl implements ShowService {
         page.setTotalCount(count);
         page.setIndex(index);
         page.setShowList(showDao.getPageByIndex(index,pageSize));
-        return null;
+        return page;
     }
 }
