@@ -1,5 +1,6 @@
 package com.Javarecruit.Dao;
 
+import com.Javarecruit.pojo.Comment;
 import com.Javarecruit.pojo.Hr;
 import com.Javarecruit.pojo.User;
 
@@ -25,4 +26,10 @@ public interface UserDao {
      */
     public User querybynamepwd(String uname, String pwd);
 
+    /**
+     * 新增评论
+     * @param c 评论对象
+     * @return 受影响行数
+     */
+    int addcomment(Comment c);
 }
