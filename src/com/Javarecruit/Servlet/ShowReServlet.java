@@ -17,7 +17,7 @@ public class ShowReServlet extends javax.servlet.http.HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         request.setCharacterEncoding("UTF-8");
         PrintWriter out = response.getWriter();
-        System.out.println("asd");
+
         String testindex = request.getParameter("index");
         int index = 1;
         if (testindex != null){
@@ -25,9 +25,9 @@ public class ShowReServlet extends javax.servlet.http.HttpServlet {
         }
         ShowService showService = new ShowServiceImpl();
         if (page == null){
-            page = showService.getPageByIndex(index,20);
+            page = showService.getPageByIndex(index,10);
         }else if (index >=1 && index <=page.getTotalPageCount()){
-            page = showService.getPageByIndex(index,20);
+            page = showService.getPageByIndex(index,10);
         }
         request.setAttribute("page",page);
         request.getRequestDispatcher("ShowPage.jsp").forward(request,response);
