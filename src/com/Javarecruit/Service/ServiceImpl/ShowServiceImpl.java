@@ -94,10 +94,13 @@ public class ShowServiceImpl implements ShowService {
     public Page getPageByIndex(int index, int pageSize) {
         Page page = new Page();
         page.setPageSize(pageSize);
-        if (count == 0){}getCount();
-        page.setTotalCount(count);
-        page.setIndex(index);
-        page.setShowList(showDao.getPageByIndex(index,pageSize));
+        if (count == 0){
+            getCount();
+            page.setTotalCount(count);
+            page.setIndex(index);
+            page.setShowList(showDao.getPageByIndex(index,pageSize));
+        }
+
         return page;
     }
 }

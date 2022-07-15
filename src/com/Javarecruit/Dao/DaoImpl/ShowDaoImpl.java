@@ -210,7 +210,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         int count = 0;
-        String sql= "select count(1) from show";
+        String sql= "select count(1) from `show`";
         try {
             preparedStatement=connection.prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();
@@ -231,7 +231,7 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         List<Show> shows = new ArrayList<Show>();
-        String sql = "select * from show limit ?,?";
+        String sql = "select * from `show` limit ?,?";
         try {
             preparedStatement= connection.prepareStatement(sql);
             preparedStatement.setInt(1,(index-1)*pageSize);
