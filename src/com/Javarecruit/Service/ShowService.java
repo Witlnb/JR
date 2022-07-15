@@ -1,5 +1,6 @@
 package com.Javarecruit.Service;
 
+import com.Javarecruit.Util.Page;
 import com.Javarecruit.pojo.Show;
 
 import java.util.List;
@@ -38,4 +39,11 @@ public interface ShowService {
      */
     void getCount();
 
+    /**
+     * 获取分页信息
+     * @param index 当前页码
+     * @param pageSize 每页显示的条目数
+     * @return 当前页码对应的分页信息
+     */
+    Page getPageByIndex(int index, int pageSize);
 }
