@@ -31,4 +31,17 @@ public interface ShowDao {
      */
     List<Show> selectAll();
 
+    /**
+     * 获取总记录数
+     * @return 总记录数
+     */
+    int getCount();
+
+    /**
+     * 获取分页信息
+     * @param index 当前页码
+     * @param pageSize 每页显示的条目数
+     * @return 当前页码对应的分页信息
+     */
+    List<Show> getPageByIndex(int index,int pageSize);
 }

@@ -12,7 +12,7 @@
     <title>Title</title>
 </head>
 <body>
-<c:forEach items="${money}" var="money">
+<c:forEach items="${iop}" var="money">
     ${money.title}
     ${money.information}
     ${money.company}

@@ -76,4 +76,15 @@ public class ShowServiceImpl implements ShowService {
         List<Show> showList = showDao.selectAll();
         return showList;
     }
+
+    private ShowDao showDao = new ShowDaoImpl();
+    private int count = 0;
+    /**
+     * count的值一般情况下不会发生变化，期望减少数据库操作的频次
+     * 可以使用代理模式解决，将count变量移动到外部帮助类
+     */
+    @Override
+    public void getCount() {
+        count = showDao.getCount();
+    }
 }

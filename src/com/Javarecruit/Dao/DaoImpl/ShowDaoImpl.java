@@ -203,4 +203,55 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         }
         return showList;
     }
+
+    @Override
+    public int getCount() {
+        Connection connection = conn();
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        int count = 0;
+        String sql= "select count(1) from show";
+        try {
+            preparedStatement=connection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                count = resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            closeAll(connection,preparedStatement,resultSet);
+        }
+        return count;
+    }
+
+    @Override
+    public List<Show> getPageByIndex(int index, int pageSize) {
+        Connection connection = conn();
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        List<Show> shows = new ArrayList<Show>();
+        String sql = "select * from show limit ?,?";
+        try {
+            preparedStatement= connection.prepareStatement(sql);
+            preparedStatement.setInt(1,(index-1)*pageSize);
+            preparedStatement.setInt(2,pageSize);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Show show = new Show();
+                show.setSid(resultSet.getInt("sid"));
+                show.setTitle(resultSet.getString("title"));
+                show.setCompany(resultSet.getString("company"));
+                show.setInformation(resultSet.getString("information"));
+                show.setMoney(resultSet.getInt("money"));
+                show.setCompanyid(resultSet.getInt("companyid"));
+                shows.add(show);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            closeAll(connection,preparedStatement,resultSet);
+        }
+        return shows;
+    }
 }

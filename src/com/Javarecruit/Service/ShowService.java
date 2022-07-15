@@ -1,7 +1,6 @@
 package com.Javarecruit.Service;
 
 import com.Javarecruit.pojo.Show;
-import com.Javarecruit.pojo.User;
 
 import java.util.List;
 
@@ -33,4 +32,10 @@ public interface ShowService {
      * @return
      */
     List<Show> All();
+
+    /**
+     * 获取总记录数
+     */
+    void getCount();
+
 }
