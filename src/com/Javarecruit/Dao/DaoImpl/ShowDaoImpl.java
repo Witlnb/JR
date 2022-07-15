@@ -203,4 +203,25 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         }
         return showList;
     }
+
+    @Override
+    public int getCount() {
+        Connection connection = conn();
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+        int count = 0;
+        String sql= "select count(1) from show";
+        try {
+            preparedStatement=connection.prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()){
+                count = resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            closeAll(connection,preparedStatement,resultSet);
+        }
+        return count;
+    }
 }

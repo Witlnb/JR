@@ -33,4 +33,9 @@ public interface ShowService {
      * @return
      */
     List<Show> All();
+
+    /**
+     * 获取总记录数
+     */
+    void getCount();
 }

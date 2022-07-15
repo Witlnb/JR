@@ -31,4 +31,9 @@ public interface ShowDao {
      */
     List<Show> selectAll();
 
+    /**
+     * 获取总记录数
+     * @return 总记录数
+     */
+    int getCount();
 }
