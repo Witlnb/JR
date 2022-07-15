@@ -27,6 +27,9 @@ public class ShowMoneyServlet extends HttpServlet {
         List<Show> sh=ssi.money(name);
         System.out.println(name);
         session.setAttribute("iop",sh);
+        if(name==0){
+            request.getRequestDispatcher("Hall.jsp").forward(request,response);
+        }
 //        if(name== 0){
 //            request.getRequestDispatcher("ShowMoney.jsp").forward(request,response);
 //        }else{

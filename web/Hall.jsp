@@ -36,6 +36,27 @@
             height: 125px;
             overflow-y: auto;
         }
+        .title {
+            height: 25px;
+            width: 200px;
+            padding-left: 5px;
+        }
+
+        .st {
+            height: 25px;
+            margin-left: 5px;
+        }
+
+        .st:hover {
+            background-color: #1E90FF;
+        }
+
+        .showTitle {
+            border: solid 1px #767676;
+            width: 209px;
+            height: 125px;
+            overflow-y: auto;
+        }
 
         ::-webkit-scrollbar {
             /*隐藏滚轮*/
@@ -52,7 +73,7 @@
 <div><input class="iput" placeholder="请点击或输入搜索字段..." onclick="showOption()" oninput="search(this.value)"
             onporpertychange="search(this.value)" onchange="search(this.value)"></div>
 <div class="op-list hidden">
-    <div class="iop">--请选择--</div>
+    <div class="iop">0</div>
     <div class="iop">2000</div>
     <div class="iop">3000</div>
     <div class="iop">4000</div>
@@ -65,6 +86,22 @@
         ${money.information}
         ${money.company}
         ${money.money}<br>
+    </c:forEach>
+</div>
+<div><input class="title" placeholder="请点击或输入搜索字段..." onclick="showTT()" oninput="test(this.value)"
+            onporpertychange="test(this.value)" onchange="test(this.value)"></div>
+<div class="showTitle hidden">
+    <div class="st">--请选择--</div>
+    <div class="st">c加加</div>
+    <div class="st">爪哇</div>
+</div>
+<div id="showT">
+    <c:forEach items="${title}" var="show">
+        ${show.title}
+        ${show.information}
+        ${show.company}
+        ${show.companyid}
+        ${show.money}<br>
     </c:forEach>
 </div>
 </body>
