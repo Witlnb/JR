@@ -1,13 +1,15 @@
 package com.Javarecruit.Util;
 
+import com.Javarecruit.pojo.Show;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Show {
-    private int index; //当前页码
-    private int pageSize; //每页条目数
-    private int totalCount; //总记录数
-    private int totalPageCount; //总页数
+public class Page {
+    private int index;	// 当前页码
+    private int pageSize;	// 每页条目数
+    private int totalCount;	// 总记录数
+    private int totalPageCount;	// 总页数
     private List<Show> showList = new ArrayList<Show>();
 
     public int getIndex() {
@@ -32,7 +34,9 @@ public class Show {
 
     public void setTotalCount(int totalCount) {
         this.totalCount = totalCount;
-        this.totalPageCount = totalCount % pageSize == 0 ? totalCount /pageSize : (totalCount / pageSize) +1;
+        this.totalPageCount = totalCount % pageSize == 0
+                ? totalCount / pageSize
+                : (totalCount / pageSize) + 1;
     }
 
     public int getTotalPageCount() {

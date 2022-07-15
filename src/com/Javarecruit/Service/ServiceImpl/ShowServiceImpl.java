@@ -3,8 +3,10 @@ package com.Javarecruit.Service.ServiceImpl;
 import com.Javarecruit.Dao.DaoImpl.ShowDaoImpl;
 import com.Javarecruit.Dao.ShowDao;
 import com.Javarecruit.Service.ShowService;
+import com.Javarecruit.Util.Page;
 import com.Javarecruit.pojo.Show;
 
+import java.sql.Connection;
 import java.util.List;
 
 public class ShowServiceImpl implements ShowService {
@@ -86,5 +88,16 @@ public class ShowServiceImpl implements ShowService {
     @Override
     public void getCount() {
         count = showDao.getCount();
+    }
+
+    @Override
+    public Page getPageByIndex(int index, int pageSize) {
+        Page page = new Page();
+        page.setPageSize(pageSize);
+        if (count == 0){}getCount();
+        page.setTotalCount(count);
+        page.setIndex(index);
+        page.setShowList(showDao.getPageByIndex(index,pageSize));
+        return page;
     }
 }
