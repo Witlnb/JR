@@ -19,8 +19,9 @@ public class HrServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         PrintWriter out=response.getWriter();
         String phone = request.getParameter("phone");
+        String cpwd = request.getParameter("cpwd");
         HrService hs = new HrServiceImpl();
-        String login = hs.login(phone);
+        String login = hs.login(phone,cpwd);
         if (login.equals("成功")){
             out.print("你好");
         }else{

@@ -32,4 +32,11 @@ public interface UserDao {
      * @return 受影响行数
      */
     int addcomment(Comment c);
+
+    /**
+     * 删除评论
+     * @param commentid 评论编号
+     * @return 受影响行数
+     */
+    int deletecomment(int commentid);
 }

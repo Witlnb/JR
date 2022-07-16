@@ -27,18 +27,20 @@ public class HrDaoImpl extends BaseDao implements HrDao {
     /**
      * 查询
      * @param phone 手机号
-     * @return
+     * @param cpwd 密码
+     * @return 对象
      */
     @Override
-    public Hr querybyphone(String phone) {
+    public Hr querybyphone(String phone,String cpwd) {
         Connection con = conn();
         PreparedStatement ps = null;
         ResultSet rs = null;
         Hr h = new Hr();
-        String sql = "select * from hr where phone=?";
+        String sql = "select * from hr where phone=? and cpwd=?";
         try {
             ps = con.prepareStatement(sql);
-            ps.setString(1, phone);
+            ps.setString(1,phone);
+            ps.setString(2,cpwd);
             rs = ps.executeQuery();
             if (rs.next()) {
                 h.setCompanyid(rs.getInt("companyid"));
@@ -46,6 +48,8 @@ public class HrDaoImpl extends BaseDao implements HrDao {
                 h.setCompany(rs.getString("company"));
                 h.setPhone(rs.getString("phone"));
                 h.setCaddress(rs.getString("caddress"));
+                h.setCpwd(rs.getString("cpwd"));
+                h.setHmoney(rs.getInt("hmoney"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

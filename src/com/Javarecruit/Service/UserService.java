@@ -23,12 +23,20 @@ public interface UserService {
      * @param pwd 用户密码
      * @return
      */
-    User login(String uname,String pwd);
+    String login(String uname,String pwd);
 
     /**
      * 用户评论
      * @param c 评论对象
      * @return 评论成功失败
      */
-    String Comment (Comment c);
+    String addComment (Comment c);
+
+    /**
+     * 删除评论
+     * @param commentid 评论编号
+     * @return 删除成功失败
+     */
+    String deleteComment(int commentid);
+
 }

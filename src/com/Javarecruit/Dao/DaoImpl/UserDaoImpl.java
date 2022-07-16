@@ -84,4 +84,12 @@ public class UserDaoImpl extends BaseDao implements UserDao  {
         int i =exceuteUpdate(sql,o);
         return i;
     }
+
+    @Override
+    public int deletecomment(int commentid) {
+        String sql="delete from comment where commentid=?";
+        Object[] o={commentid};
+        int i=exceuteUpdate(sql,o);
+        return i;
+    }
 }

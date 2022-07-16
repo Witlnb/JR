@@ -10,12 +10,14 @@ public interface HrDao {
      * @return 返回受影响行数
      */
     int addByHr(Hr hr);
+
     /**
      * 查询
      * @param phone 手机号
-     * @return
+     * @param cpwd 密码
+     * @return 对象
      */
-    public Hr querybyphone(String phone);
+    public Hr querybyphone(String phone,String cpwd);
     /**
      * 修改Hr信息
      * @return 返回确认数值

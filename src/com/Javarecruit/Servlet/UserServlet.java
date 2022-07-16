@@ -22,12 +22,10 @@ public class UserServlet extends HttpServlet {
         String uname = request.getParameter("uname");
         String upwd = request.getParameter("upwd");
         UserService us=new UserServiceImpl();
-        User login = us.login(uname, upwd);
-        if (login.getMark().equals("是")){
+        String login = us.login(uname, upwd);
+        if ("成功".equals(login)){
 //            request.getRequestDispatcher("showMore.jsp").forward(request,response);
-            out.print("老板");
-        }else if (login.getMark().equals("否")){
-            out.print("用户");
+            out.print("hello");
         }else{
            response.sendRedirect("UserLogin.jsp");
         }

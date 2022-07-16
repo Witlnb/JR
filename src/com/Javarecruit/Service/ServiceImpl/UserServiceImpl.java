@@ -36,23 +36,33 @@ public class UserServiceImpl implements UserService {
      * @return
      */
     @Override
-    public User login(String uname, String pwd) {
+    public String login(String uname, String pwd) {
         UserDao ud=new UserDaoImpl();
         User name = ud.querybynamepwd(uname, pwd);
         if (name!=null){
-            return name;
+            return "成功";
         }else{
-            return null;
+            return "失败";
         }
     }
 
     @Override
-    public String Comment(Comment c) {
+    public String addComment(Comment c) {
         UserDao ud=new UserDaoImpl();
         int addcomment = ud.addcomment(c);
         if (addcomment==0){
            return "失败" ;
         }
         return "成功";
+    }
+
+    @Override
+    public String deleteComment(int commentid) {
+        UserDao ud=new UserDaoImpl();
+        int deletecomment = ud.deletecomment(commentid);
+        if (deletecomment==0){
+            return "成功";
+        }
+        return "失败";
     }
 }

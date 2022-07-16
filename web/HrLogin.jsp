@@ -12,7 +12,8 @@
 </head>
 <body>
     <form action="HrServlet" method="post">
-        手机号:<input type="text" name="phone">
+        手机号:<input type="text" name="phone"><br/>
+        密码:<input type="password" name="cpwd"><br/>
         <input type="submit" value="登录">
     </form>
 </body>

@@ -17,9 +17,10 @@ public interface HrService {
     int reviseHr(Hr h);
 
     /**
-     * HR登录
+     * 登录
      * @param phone 手机号
-     * @return
+     * @param cpwd 密码
+     * @return 登录成功失败
      */
-    String login(String phone);
+    String login(String phone,String cpwd);
 }

@@ -25,15 +25,16 @@ public class HrServiceImpl implements HrService {
     }
 
     /**
-     * HR登录
+     * hr登录
      * @param phone 手机号
-     * @return
+     * @param cpwd 密码
+     * @return 登录成功失败
      */
     @Override
-    public String login(String phone) {
+    public String login(String phone,String cpwd) {
         HrDao hd = new HrDaoImpl();
-        Hr querybynamepwd = hd.querybyphone(phone);
-        if (querybynamepwd.getPhone()==null){
+        Hr querybynamepwd = hd.querybyphone(phone,cpwd);
+        if (querybynamepwd.getPhone()==null&&querybynamepwd.getCpwd()==null){
             return "失败";
         }
         return "成功";
