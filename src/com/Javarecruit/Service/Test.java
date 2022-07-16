@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
 public class Test {
     private Logger logger = LoggerFactory.getLogger(Test.class);
 
-    String userId;
+    private static String userId;
 
     //连接时执行
     @OnOpen
