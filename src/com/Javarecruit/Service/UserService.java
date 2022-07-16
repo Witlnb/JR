@@ -1,5 +1,6 @@
 package com.Javarecruit.Service;
 
+import com.Javarecruit.pojo.Comment;
 import com.Javarecruit.pojo.User;
 
 public interface UserService {
@@ -22,5 +23,12 @@ public interface UserService {
      * @param pwd 用户密码
      * @return
      */
-    String login(String uname,String pwd);
+    User login(String uname,String pwd);
+
+    /**
+     * 用户评论
+     * @param c 评论对象
+     * @return 评论成功失败
+     */
+    String Comment (Comment c);
 }
