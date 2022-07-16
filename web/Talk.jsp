@@ -14,6 +14,7 @@
     <link href="./chat.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
           crossorigin="anonymous">
+    <script src="JS/jquery-3.6.0.js"></script>
     <style type="text/css">
         body {
             padding: 0px;
@@ -104,7 +105,7 @@
         .chatright #message {
             background-color: #edf5f8;
             height: 65%;
-            overflow-y: scroll;
+            overflow-y: auto;
         }
         .chatright #message ul {
             padding: 10px;
@@ -250,6 +251,7 @@
                         <p class="msgcard">This is a long message! This is a long message! This is a long left message!</p>
                     </li>
                 </ul>
+                <ul id="mess">
                 <li class="msgleft">
                     <img style="border-radius: 20px; vertical-align: top;"  src="Img/搜索框21px.png">
                     <p id="mmm">This is a long message! This is a long message! This is a long left message!</p>
@@ -279,7 +281,7 @@
 
     //连接成功建立的回调方法
     websocket.onopen = function(event){
-        setMessageInnerHTML("open");
+        // setMessageInnerHTML("open");
     }
     console.log("-----")
     //接收到消息的回调方法
@@ -299,7 +301,16 @@
 
     //将消息显示在网页上
     function setMessageInnerHTML(innerHTML){
-        document.getElementById('mmm').innerHTML += innerHTML + '<br/>';
+        // document.getElementById('mmm').innerHTML += innerHTML + '<br/>';
+        $("#message").append(
+            '<ul>'+
+                '<li class="msgleft">'+
+                '<img style="border-radius: 20px; vertical-align: top;"  src="Img/搜索框21px.png">'+
+                    '<p id="mmm">'+innerHTML+'</p>'+
+                '</li>'+
+            '</ul>'
+        );
+        add();
     }
 
     //关闭连接
@@ -311,6 +322,12 @@
     function send(){
         var message = document.getElementById('text').value;
         websocket.send(message);
+        $("#text").val("").focus();
+    }
+    function add()
+    {
+        var div = document.getElementById('message');
+        div.scrollTop = div.scrollHeight;
     }
 </script>
 </body>
