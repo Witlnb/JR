@@ -21,6 +21,7 @@ public class HrEnrollServlet extends HttpServlet {
         String hmoney = request.getParameter("hmoney");
         String caddress = request.getParameter("caddress");
         String phone = request.getParameter("phone");
+        String cpwd = request.getParameter("cpwd");
         int parseInt = Integer.parseInt(hmoney);
         Hr hr = new Hr();
         hr.setCompany(company);
@@ -28,6 +29,7 @@ public class HrEnrollServlet extends HttpServlet {
         hr.setHmoney(parseInt);
         hr.setCaddress(caddress);
         hr.setPhone(phone);
+        hr.setCpwd(cpwd);
         HrService hrService = new HrServiceImpl();
         int enroll = hrService.enroll(hr);
         if (enroll!=0){

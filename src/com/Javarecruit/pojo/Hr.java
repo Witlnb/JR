@@ -13,6 +13,8 @@ public class Hr {
     private String caddress;
     //预计薪资
     private int hmoney;
+    //密码
+    private String cpwd;
 
     public int getHmoney() {
         return hmoney;
@@ -60,5 +62,11 @@ public class Hr {
 
     public void setCaddress(String caddress) {
         this.caddress = caddress;
+    }
+    public String getCpwd() {
+        return cpwd;
+    }
+    public void setCpwd(String cpwd) {
+        this.cpwd = cpwd;
     }
 }

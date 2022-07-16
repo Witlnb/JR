@@ -68,7 +68,7 @@
                     <option value="5-10年">5-10年</option>
                     <option value="10年以上">10年以上</option></select><label></label>
                 </div>
-                <div>
+                <div class="s2">
                     性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别:<input type="radio" name="sex" value="男">男<input type="radio" name="sex" value="女">女<label></label>
                 </div>
                 <div class="s1">
@@ -96,6 +96,9 @@
                 </div>
                 <div class="s1">
                     手&nbsp;&nbsp;机&nbsp;&nbsp;号:<input type="text" name="nid" required><label></label>
+                </div>
+                <div class="s1">
+                    密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:<input type="text" name="cpwd" required><label></label>
                 </div>
                 <input type="submit" value="注&nbsp;册" class="btn">
             </form>

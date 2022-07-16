@@ -18,8 +18,8 @@ public class HrDaoImpl extends BaseDao implements HrDao {
      */
     @Override
     public int addByHr(Hr hr) {
-        String sql = "insert into hr(cshow,company,phone,caddress,hmoney) values(?,?,?,?,?)";
-        Object[] objects ={hr.getCshow(),hr.getCompany(),hr.getPhone(),hr.getCaddress(),hr.getHmoney()};
+        String sql = "insert into hr(cshow,company,phone,caddress,hmoney,cpwd) values(?,?,?,?,?,?)";
+        Object[] objects ={hr.getCshow(),hr.getCompany(),hr.getPhone(),hr.getCaddress(),hr.getHmoney(),hr.getCpwd()};
         int insert = exceuteUpdate(sql, objects);
         return insert;
     }
