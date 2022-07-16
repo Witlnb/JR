@@ -33,8 +33,8 @@ public class HrServiceImpl implements HrService {
     @Override
     public String login(String phone,String cpwd) {
         HrDao hd = new HrDaoImpl();
-        Hr querybynamepwd = hd.querybyphone(phone,cpwd);
-        if (querybynamepwd.getPhone()==null&&querybynamepwd.getCpwd()==null){
+        Hr querybyphone = hd.querybyphone(phone, cpwd);
+        if (querybyphone.getPhone()==null && querybyphone.getCwpd()==null){
             return "失败";
         }
         return "成功";
