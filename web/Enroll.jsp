@@ -33,10 +33,10 @@
         <div class="dom" style="display: block">
             <form action="EnrollServlet" method="post">
                 <div class="s1">
-                    用&nbsp;&nbsp;户&nbsp;&nbsp;名:<input type="text" name="user" autofocus required><label></label>
+                    用&nbsp;&nbsp;户&nbsp;&nbsp;名:<input type="text" name="uname" autofocus required><label></label>
                 </div>
                 <div class="s1">
-                    密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:<input type="text" name="pwd" required><label></label>
+                    密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:<input type="text" name="upwd" required><label></label>
                 </div>
                 <div class="s1">
                     手&nbsp;&nbsp;机&nbsp;&nbsp;号:<input type="text" name="phone" required><label></label>
@@ -59,7 +59,7 @@
                     <option value="博士">博士</option></select><label></label>
                 </div>
                 <div class="s1">
-                    工作经验:<select name="study" required>
+                    工作经验:<select name="job" required>
                     <option value="" selected="selected">请选择</option>
                     <option value="无经验">无经验</option>
                     <option value="一年以下">一年以下</option>
@@ -72,10 +72,10 @@
                     性&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别:<input type="radio" name="sex" value="男">男<input type="radio" name="sex" value="女">女<label></label>
                 </div>
                 <div class="s1">
-                    地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址:<input type="text" name="nid"  required><label></label>
+                    地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址:<input type="text" name="address"  required><label></label>
                 </div>
                 <div class="s1">
-                    简&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历:<input type="text" name="nid"  required><label></label>
+                    简&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历:<input type="text" name="personal"  required><label></label>
                 </div>
                 <input type="submit" value="注&nbsp;册" class="btn">
             </form>
@@ -83,19 +83,19 @@
         <div class="dom">
             <form action="HrEnrollServlet" method="post">
                 <div class="s1">
-                    公司名称:<input type="text" name="nid"  required><label></label>
+                    公司名称:<input type="text" name="company"  required><label></label>
                 </div>
                 <div class="s1">
-                    公司信息:<input type="text" name="nid"  required><label></label>
+                    公司信息:<input type="text" name="cshow"  required><label></label>
                 </div>
                 <div class="s1">
-                    预计薪资:<input type="text" name="nid" required><label></label>
+                    预计薪资:<input type="text" name="hmoney" required><label></label>
                 </div>
                 <div class="s1">
-                    地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址:<input type="text" name="nid" required><label></label>
+                    地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址:<input type="text" name="caddress" required><label></label>
                 </div>
                 <div class="s1">
-                    手&nbsp;&nbsp;机&nbsp;&nbsp;号:<input type="text" name="nid" required><label></label>
+                    手&nbsp;&nbsp;机&nbsp;&nbsp;号:<input type="text" name="phone" required><label></label>
                 </div>
                 <div class="s1">
                     密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码:<input type="text" name="cpwd" required><label></label>
