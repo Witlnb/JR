@@ -122,7 +122,6 @@
         var type = ur.split('?')[1].split("=")[1];
         $('#tit span').eq(type - 1).addClass('select').siblings().removeClass('select');
         $('#con li').eq(type - 1).show().siblings().hide();
-
     </script>
     </body>
 </html>
