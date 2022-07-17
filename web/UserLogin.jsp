@@ -14,7 +14,7 @@
 <%--<script type="text/javascript" src="JS/MulJq.js"></script>--%>
 <body>
     <form action="UserServlet" method="post">
-        用户名:<input type="text" name="uname"><br>
+        手机号:<input type="text" name="phone"><br>
         密  码:<input type="password" name="upwd">
         <span></span>
         <br>

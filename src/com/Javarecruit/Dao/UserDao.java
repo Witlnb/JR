@@ -20,11 +20,11 @@ public interface UserDao {
 
     /**
      * 查询
-     * @param uname 用户名
+     * @param phone 用户名
      * @param pwd 密码
      * @return 结果
      */
-    public User querybynamepwd(String uname, String pwd);
+    public User querybynamepwd(String phone, String pwd);
 
     /**
      * 新增评论

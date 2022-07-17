@@ -31,15 +31,15 @@ public class UserServiceImpl implements UserService {
 
     /**
      * 用户登录
-     * @param uname 用户名
+     * @param phone 用户名
      * @param pwd 用户密码
      * @return
      */
     @Override
-    public String login(String uname, String pwd) {
+    public String login(String phone, String pwd) {
         UserDao ud=new UserDaoImpl();
-        User name = ud.querybynamepwd(uname, pwd);
-        if (name!=null){
+        User name = ud.querybynamepwd(phone, pwd);
+        if (name.getPhone()!=null&&name.getUpwd()!=null){
             return "成功";
         }else{
             return "失败";
@@ -65,4 +65,5 @@ public class UserServiceImpl implements UserService {
         }
         return "失败";
     }
+
 }

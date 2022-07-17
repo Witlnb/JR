@@ -34,9 +34,9 @@ public class HrServiceImpl implements HrService {
     public String login(String phone,String cpwd) {
         HrDao hd = new HrDaoImpl();
         Hr querybyphone = hd.querybyphone(phone, cpwd);
-        if (querybyphone.getPhone()==null && querybyphone.getCwpd()==null){
-            return "失败";
+        if (querybyphone.getPhone()!=null && querybyphone.getCpwd()!=null){
+            return "成功";
         }
-        return "成功";
+        return "失败";
     }
 }

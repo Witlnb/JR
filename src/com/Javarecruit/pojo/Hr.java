@@ -11,9 +11,19 @@ public class Hr {
     private String phone;
     //地址
     private String caddress;
+    //密码
+    private String cpwd;
+
+    public String getCpwd() {
+        return cpwd;
+    }
+
+    public void setCpwd(String cpwd) {
+        this.cpwd = cpwd;
+    }
+
     //预计薪资
     private int hmoney;
-
     public int getHmoney() {
         return hmoney;
     }
