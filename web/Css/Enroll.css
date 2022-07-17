@@ -37,7 +37,7 @@ a{
 /*#content .content-header{*/
 /*    border: 0.1rem solid blue;*/
 /*}*/
-#content .content-header a{
+#content .content-header  ul span li a{
     height: 6rem;
     width: 50%;
     background-image: linear-gradient(to right, #a6c1ee, #a6c1ee);;
@@ -50,7 +50,7 @@ a{
     line-height: 6rem;
     font-size: 1.6rem;
 }
-#content .content-header a.current{
+#content .content-header ul span li a.current{
     background-color: transparent;
     color: 	#000000;
     font-weight: bold;
@@ -62,7 +62,7 @@ a{
 }
 #content .content-body .dom{
     width: 100%;
-    display: none;
+    display: block;
 }
 #content .content-body .dom .s1{
     /*background-color: red;*/

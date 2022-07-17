@@ -8,6 +8,7 @@
             margin:0;
             height:100%;
             Background-size:cover;
+
         }
         #head{
             position: fixed;
@@ -137,6 +138,7 @@
             height: 43px;
             position: fixed;
             top: 0;
+            left: 1509px;
             color: #f5eded;
             background-color: #88acce;
             border:none;
@@ -209,10 +211,54 @@
             color: #edf6f4;
             display: none;
         }
+        #loginPage{
+            position: absolute;
+            top: 200px;
+            left: 40%;
+            background-image: url("Img/星空.gif");
+            width: 350px;
+            height: 400px;
+            z-index: 10;
+            border-radius: 50px;
+            color: #ebf5eb;
+        }
+        #upbody{
+            position: absolute;
+            top: -399px;
+            left: 0;
+            width: 1920px;
+            height: 1500px;
+            z-index: 4;
+            background-color: #bdbbbb;
+            opacity: 50%;
+        }
+        .name{
+            position: relative;
+            top:90px;
+            left: 60px;
+        }
+        .pwd{
+            position: relative;
+            top: 40px;
+        }
+        .loginU{
+            position: relative;
+            top: 60px;
+            width: 230px;
+            height: 100px;
+            border-radius: 10px;
+            font-size: 40px;
+            background-image: url("Img/小王子.jpg");
+            background-position: center;
+            color: #cad8f3;
+        }
+        #LoginP{
+            display:none;
+        }
     </style>
 </head>
 <body>
-<script type="text/javascript" src="JS/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="jquery-3.6.0.js"></script>
 <script type="text/javascript" src="JS/TT.js"></script>
 <div id="head"></div>
 <div id="shows"><img src="Img/宣传语.png" class="show"></div>
@@ -221,10 +267,8 @@
     <input type="text" class="searchOne" name="搜索"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>
-<form action="" method="post" id="login">
-    <input  class="login" type="submit" name="login" value="登录">
-</form>
-<form action="" method="post" id="register">
+<input  class="login" type="button" name="login" value="登录" onclick="login()">
+<form action="Enroll.jsp" method="post" id="register">
     <input  class="inset" type="submit" name="register" value="注册">
 </form>
 <!--<div id="Talk">-->
@@ -243,9 +287,17 @@
 </div>
 <img src="Img/倒三角.png" class="sj">
 <video class="video" muted="muted"  loop="loop" src="https://lf-cdn-tos.bytescm.com/obj/static/toutiao/resource/ailabweb/media/home.ccc6b169.mp4" autoplay="autoplay"></video>
-<a href="http://www.baidu.com"><div id="chooseBoss"></div></a>
+<a href="Enroll.jsp?type=1"><div id="chooseBoss"></div></a>
 <div><input  class="Boss" type="button" name="Boss" value="我要招聘"></div>
-<a href="http://www.baidu.com"><div id="chooseUser"></div></a>
+<a href="Enroll.jsp?type=2"><div id="chooseUser"></div></a>
 <div><input class="User" type="submit" name="User" value="我要求职"></div>
+<div id="LoginP">
+    <div id="upbody"></div>
+    <form action="HrServlet" method="post" id="loginPage">
+        <div class="name"> 手机号:&nbsp;<input type="text" name="phone"><br/><div>
+            <div class="pwd"> 密&emsp;码:&nbsp;<input type="password" name="cpwd"><br/><div>
+                <input type="submit" value="登录" class="loginU">
+    </form>
+</div>
 </body>
 </html>
