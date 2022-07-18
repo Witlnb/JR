@@ -141,15 +141,11 @@
 
         }
         .login{
-            width: 50px;
             height: 43px;
             position: fixed;
             top: 0;
             left: 1509px;
-            color: #f5eded;
-            background-color: #88acce;
-            border:none;
-            z-index: 1;
+            z-index: 5;
         }
         .inset{
             width: 50px;
@@ -276,7 +272,7 @@
     <input type="text" class="searchOne" name="搜索"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>
-<input  class="login" type="button" name="login" value="登录" onclick="login()">
+<img src="Img/用户头像透明.png" ALT="查看信息" class="login">
 <form action="Enroll.jsp" method="post" id="register">
     <input  class="inset" type="submit" name="register" value="注册">
 </form>
