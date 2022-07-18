@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 @WebServlet(name = "UserServlet",urlPatterns = {"/UserServlet"})
 public class UserServlet extends HttpServlet {
@@ -27,7 +28,7 @@ public class UserServlet extends HttpServlet {
         HttpSession session1 = request.getSession();
         HttpSession session=request.getSession();
         String phone = request.getParameter("phone");
-        String upwd = request.getParameter("upwd");
+        String upwd = request.getParameter("cpwd");
         UserService us=new UserServiceImpl();
         String login = us.login(phone, upwd);
         HrService hs=new HrServiceImpl();
@@ -38,6 +39,10 @@ public class UserServlet extends HttpServlet {
         //储存HR信息
         Hr h = hs.SessionH(phone,upwd);
         session.setAttribute("LoginH",h);
+        //查询用户信息
+        UserServiceImpl usi=new UserServiceImpl();
+        List<User> ur=usi.queryAll();
+        session.setAttribute("user",ur);
         //跳转页面
         if ("成功".equals(login)){
             session1.setAttribute("phone",phone);
@@ -47,6 +52,7 @@ public class UserServlet extends HttpServlet {
             response.sendRedirect("TheShow.jsp");
         }else if ("成功".equals(login1)){
                 out.print("老板");
+                request.getRequestDispatcher("HrShow.jsp").forward(request,response);
         }else{
             response.sendRedirect("LoginFail.jsp");
         }
