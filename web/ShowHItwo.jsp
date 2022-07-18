@@ -24,5 +24,20 @@
 公司地址:${LoginH.caddress}
 <br>
 <a href="HrRevise.jsp">修改信息</a>
+<br>
+展示信息:
+展示id:${showComp.sid}
+<br>
+公司名称:${showComp.company}
+<br>
+展示id:${showComp.companyid}
+<br>
+标签${showComp.title}
+<br>
+招聘信息${showComp.information}
+<br>
+期望薪资${showComp.money}
+<br>
+<a href="ShowRervlet.jsp">修改信息</a>
 </body>
 </html>

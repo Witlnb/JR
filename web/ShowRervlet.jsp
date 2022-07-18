@@ -19,6 +19,7 @@
 标签<input type="text" name="personal" value="${showComp.title}">
 招聘信息<input type="text" name="personal" value="${showComp.information}">
 期望薪资<input type="text" name="personal" value="${showComp.money}">
+<input type="submit" name="提交">
 </form>
 </body>
 </html>
