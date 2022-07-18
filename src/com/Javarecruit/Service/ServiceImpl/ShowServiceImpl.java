@@ -103,4 +103,11 @@ public class ShowServiceImpl implements ShowService {
 
         return page;
     }
+
+    @Override
+    public List<Show> showComp(Integer one) {
+        ShowDaoImpl ss = new ShowDaoImpl();
+        ss.showComp(one);
+        return  ss.showComp(one);
+    }
 }

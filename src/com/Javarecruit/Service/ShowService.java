@@ -46,4 +46,8 @@ public interface ShowService {
      * @return 当前页码对应的分页信息
      */
     Page getPageByIndex(int index, int pageSize);
+    /**
+     * 获取公司发布信息
+     */
+    public List<Show> showComp(Integer one);
 }
