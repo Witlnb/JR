@@ -1,3 +1,11 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: admin
+  Date: 2022/7/12
+  Time: 21:10
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +16,7 @@
             margin:0;
             height:100%;
             Background-size:cover;
-
+            overflow-y: hidden;
         }
         #head{
             position: fixed;
@@ -155,62 +163,6 @@
             border:none;
             z-index: 1;
         }
-        .sj{
-            position: relative;
-            top: 210px;
-            left: 880px;
-            height: 100px;
-
-        }
-        .video{
-            position: relative;
-            top: 270px;
-            width: 100%;
-        }
-        #chooseBoss{
-            width: 50%;
-            height: 1069px;
-            background-color: #18181c;
-            position: absolute;
-            top: 975px;
-            left: 0;
-            opacity: 10%;
-            z-index: 1;
-        }
-        #chooseUser{
-            width: 50%;
-            height: 1069px;
-            background-color: #100b0b;
-            position: absolute;
-            left:50%;
-            top: 975px;
-            opacity: 10%;
-            z-index: 1;
-        }
-        .User{
-            position: absolute;
-            top: 975px;
-            left: 0;
-            width: 50%;
-            height: 1069px;
-            background-image: url("Img/球.gif");
-            background-position: -900px -100px;
-            font-size:35px;
-            color: #ebf5eb;
-            display: none;
-        }
-        .Boss{
-            position: absolute;
-            left: 50%;
-            top: 975px;
-            width: 50%;
-            height: 1069px;
-            background-image: url("Img/球2.gif");
-            background-position: -900px -100px;
-            font-size:35px;
-            color: #edf6f4;
-            display: none;
-        }
         #loginPage{
             position: absolute;
             top: 200px;
@@ -255,12 +207,20 @@
             color: #cad8f3;
         }
         #LoginP{
-            display:none;
+            display:block;
+        }
+        h1{
+            position: relative;
+            left: 30px;
+        }
+        #fall{
+            position: absolute;
+            top: 10px;
         }
     </style>
 </head>
 <body>
-<script type="text/javascript" src="JS/jquery-3.6.0.js"></script>
+<script type="text/javascript" src="jquery-3.6.0.js"></script>
 <script type="text/javascript" src="JS/TT.js"></script>
 <div id="head"></div>
 <div id="shows"><img src="Img/宣传语.png" class="show"></div>
@@ -275,7 +235,7 @@
 </form>
 <!--<div id="Talk">-->
 <!--    <a href="Talk.jsp">在线沟通</a>-->
-<!--</div>-->
+</div>
 <div  id ="d1">
     <div id="OWindow">
         <div id="pictureDiv" >
@@ -287,27 +247,18 @@
         </div>
     </div>
 </div>
-<img src="Img/倒三角.png" class="sj">
-<video class="video" muted="muted"  loop="loop" src="https://lf-cdn-tos.bytescm.com/obj/static/toutiao/resource/ailabweb/media/home.ccc6b169.mp4" autoplay="autoplay"></video>
-<a href="Enroll.jsp?type=1"><div id="chooseBoss"></div></a>
-<div><input  class="Boss" type="button" name="Boss" value="我要招聘"></div>
-<a href="Enroll.jsp?type=2"><div id="chooseUser"></div></a>
-<div><input class="User" type="submit" name="User" value="我要求职"></div>
 <div id="LoginP">
     <div id="upbody"></div>
-    <form action="HrServlet" method="post" id="loginPage">
-        <div class="name"> 手机号:&nbsp;<input type="text" name="phone">
-            <br/>
+    <form action="UserServlet" method="post" id="loginPage">
+        <h1>登录失败请重新登录</h1>
+        <div id="fall">
+            <div class="name"> 手机号:&nbsp;<input type="text" name="phone">
+                <br/>
+            </div>
+            <div class="pwd"> 密&emsp;码:&nbsp;<input type="password" name="cpwd"><br/></div>
+            <input type="submit" value="登录" class="loginU">
         </div>
-        <div class="pwd"> 密&emsp;码:&nbsp;<input type="password" name="cpwd"><br/></div>
-        <input type="submit" value="登录" class="loginU">
     </form>
 </div>
-<script>
-    login = function() {
-        $("#LoginP").css("display","block");
-        $("body").css("overflow-y"," hidden")
-    }
-</script>
 </body>
 </html>

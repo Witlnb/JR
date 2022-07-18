@@ -67,3 +67,73 @@ $(document).click(function (e) {
         var a = $('hidden').val();
     }
 });
+//薪资范围的展示
+function showRange() {
+    $('.First').toggleClass('hidden');
+    $('.o').show();
+}
+$(document).on('click', '.o', function () {
+    $('.First').addClass('hidden');
+    var text = $(this).text();
+    $('.one').val(text);
+    $.ajax({
+        "url":"RangeServlet",
+        "type":"get",
+        "async":false,
+        "data":"o="+$(this).text(),
+        "dataType":"text",
+        "success" :function (){
+            window.location="Hall.jsp";
+        },
+    })
+})
+function range(value) {
+    $('.o').show();
+    $('.o').each(function () {
+        var text = $(this).text();
+        if (text.indexOf(value) == -1) {
+            $(this).hide();
+        }
+    });
+}
+$(document).click(function (e) {
+    if ('one' != e.target.className) {
+        $('.First').addClass('hidden');
+        var a = $('hidden').val();
+    }
+});
+
+// function otherRange() {
+//     $('.Second').toggleClass('hidden');
+//     $('.p').show();
+// }
+// $(document).on('click', '.p', function () {
+//     $('.Second').addClass('hidden');
+//     var text = $(this).text();
+//     $('.two').val(text);
+//     $.ajax({
+//         "url":"feiFei",
+//         "type":"get",
+//         "async":false,
+//         "data":"p="+$(this).text(),
+//         "dataType":"text",
+//         "success" :function (){
+//             window.location="Hall.jsp";
+//         },
+//     })
+// })
+// function next(value) {
+//     $('.p').show();
+//     $('.p').each(function () {
+//         var text = $(this).text();
+//         if (text.indexOf(value) == -1) {
+//             $(this).hide();
+//         }
+//     });
+// }
+// $(document).click(function (e) {
+//     if ('two' != e.target.className) {
+//         $('.Second').addClass('hidden');
+//         var a = $('hidden').val();
+//     }
+// });

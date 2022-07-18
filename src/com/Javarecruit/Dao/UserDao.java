@@ -4,6 +4,8 @@ import com.Javarecruit.pojo.Comment;
 import com.Javarecruit.pojo.Hr;
 import com.Javarecruit.pojo.User;
 
+import java.util.List;
+
 public interface UserDao {
     /**
      * 修改用户信息
@@ -39,4 +41,9 @@ public interface UserDao {
      * @return 受影响行数
      */
     int deletecomment(int commentid);
+
+    /**
+     * 查询全部的方法
+     */
+    List<User> queryAll();
 }

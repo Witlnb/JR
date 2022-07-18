@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserDaoImpl extends BaseDao implements UserDao  {
 
@@ -91,5 +93,34 @@ public class UserDaoImpl extends BaseDao implements UserDao  {
         Object[] o={commentid};
         int i=exceuteUpdate(sql,o);
         return i;
+    }
+
+    /**
+     * 查询全部的方法
+     */
+    @Override
+    public List<User> queryAll() {
+        Connection con=conn();
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        String sql="select * from `user`";
+        List<User> us=new ArrayList<User>();
+        try{
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                User u=new User();
+                u.setUpwd(rs.getString("uname"));
+                u.setPhone(rs.getString("phone"));
+                u.setEmail(rs.getString("email"));
+                u.setStudy(rs.getString("study"));
+                u.setJob(rs.getString("job"));
+                u.setSex(rs.getString("sex"));
+                us.add(u);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return us;
     }
 }
