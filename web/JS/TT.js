@@ -66,4 +66,10 @@ $(document).ready(function () {
         div.animate({top:'210px'},"slow");
         div.animate({top:'230px'},"slow");
     }
+
+    $(".userHead").mouseover(function () {
+        $(this).css("transform","rotate(45deg)");
+    }).mouseleave(function () {
+        $(this).css("transform","rotate(0deg)");
+    })
 })
