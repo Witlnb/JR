@@ -13,7 +13,7 @@ public interface CommentDao {
 
     /**
      * 查看评论
-     * @param commentid 评论编号
+     * @param uid 评论编号
      * @return 对象
      */
     Comment chaComment(int uid);

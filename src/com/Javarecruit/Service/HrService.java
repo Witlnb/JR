@@ -23,4 +23,8 @@ public interface HrService {
      * @return 登录成功失败
      */
     String login(String phone,String cpwd);
+    /**
+     * 储存用户信息
+     */
+    public Hr SessionH(String phone,String cpwd);
 }

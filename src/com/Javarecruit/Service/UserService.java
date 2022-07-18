@@ -1,7 +1,10 @@
 package com.Javarecruit.Service;
 
 import com.Javarecruit.pojo.Comment;
+import com.Javarecruit.pojo.Show;
 import com.Javarecruit.pojo.User;
+
+import java.util.List;
 
 public interface UserService {
     /**
@@ -38,5 +41,14 @@ public interface UserService {
      * @return 删除成功失败
      */
     String deleteComment(int commentid);
+    /**
+     * 储存用户信息
+     */
+    public User sessionUser(String phone, String pwd);
 
+    /**
+     * 展示全部的方法
+     * @return 展示结果
+     */
+    List<User> queryAll();
 }

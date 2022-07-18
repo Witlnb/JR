@@ -6,6 +6,8 @@ import com.Javarecruit.Service.UserService;
 import com.Javarecruit.pojo.Comment;
 import com.Javarecruit.pojo.User;
 
+import java.util.List;
+
 public class UserServiceImpl implements UserService {
     /**
      * 修改
@@ -65,5 +67,24 @@ public class UserServiceImpl implements UserService {
         }
         return "失败";
     }
+    
+    @Override
+    public User sessionUser(String phone, String pwd) {
+        UserDao ud=new UserDaoImpl();
+        User uu = ud.querybynamepwd(phone, pwd);
+        return uu;
+    }
+
+    /**
+     *展示全部的方法
+     * @return 展示结果
+     */
+    @Override
+    public List<User> queryAll() {
+        UserDaoImpl udi=new UserDaoImpl();
+        List<User> us=udi.queryAll();
+        return us;
+    }
+
 
 }
