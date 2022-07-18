@@ -1,10 +1,13 @@
 package com.Javarecruit.Servlet;
 
+import com.Javarecruit.Dao.DaoImpl.ShowDaoImpl;
 import com.Javarecruit.Service.HrService;
 import com.Javarecruit.Service.ServiceImpl.HrServiceImpl;
+import com.Javarecruit.Service.ServiceImpl.ShowServiceImpl;
 import com.Javarecruit.Service.ServiceImpl.UserServiceImpl;
 import com.Javarecruit.Service.UserService;
 import com.Javarecruit.pojo.Hr;
+import com.Javarecruit.pojo.Show;
 import com.Javarecruit.pojo.User;
 import com.sun.org.apache.regexp.internal.RE;
 
@@ -51,7 +54,10 @@ public class UserServlet extends HttpServlet {
             out.print("hello");
             response.sendRedirect("TheShow.jsp");
         }else if ("成功".equals(login1)){
-                out.print("老板");
+            ShowServiceImpl ss = new ShowServiceImpl();
+            Integer s = h.getCompanyid();
+            List<Show> showComp = ss.showComp(s);
+            session.setAttribute("showComp", showComp);
                 request.getRequestDispatcher("HrShow.jsp").forward(request,response);
         }else{
             response.sendRedirect("LoginFail.jsp");
