@@ -4,10 +4,7 @@ import com.Javarecruit.Dao.DaoImpl.UserDaoImpl;
 import com.Javarecruit.Dao.UserDao;
 import com.Javarecruit.Service.UserService;
 import com.Javarecruit.pojo.Comment;
-import com.Javarecruit.pojo.Show;
 import com.Javarecruit.pojo.User;
-
-import java.util.List;
 
 public class UserServiceImpl implements UserService {
     /**
@@ -70,10 +67,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<User> queryAll() {
-        UserDaoImpl udi=new UserDaoImpl();
-        List<User> sh=udi.queryAll();
-        return sh;
+    public User sessionUser(String phone, String pwd) {
+        UserDao ud=new UserDaoImpl();
+        User uu = ud.querybynamepwd(phone, pwd);
+        return uu;
     }
 
 }

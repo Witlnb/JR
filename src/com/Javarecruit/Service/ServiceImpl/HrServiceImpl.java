@@ -39,4 +39,13 @@ public class HrServiceImpl implements HrService {
         }
         return "失败";
     }
+    /**
+     * hr储存登录信息
+     */
+    @Override
+    public Hr SessionH(String phone,String cpwd) {
+        HrDao hd = new HrDaoImpl();
+        Hr querybyphone = hd.querybyphone(phone, cpwd);
+       return querybyphone;
+    }
 }

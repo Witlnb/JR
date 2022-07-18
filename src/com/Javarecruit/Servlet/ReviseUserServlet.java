@@ -21,7 +21,7 @@ public class ReviseUserServlet extends HttpServlet {
         UserServiceImpl uu =  new UserServiceImpl();
         PrintWriter out = response.getWriter();
         User u = new User();
-//        Integer uid = Integer.parseInt(request.getParameter("uid"));
+        Integer uid = Integer.parseInt(request.getParameter("uid"));
         String upwd = request.getParameter("upwd");
         String phone = request.getParameter("phone");
         String mark = request.getParameter("mark");
@@ -30,8 +30,7 @@ public class ReviseUserServlet extends HttpServlet {
         String job = request.getParameter("job");
         String address = request.getParameter("address");
         String personal = request.getParameter("personal");
-        Integer a = 1;
-        u.setUid(a);
+        u.setUid(uid);
         u.setUpwd(upwd);
         u.setPhone(phone);
         u.setMark(mark);
