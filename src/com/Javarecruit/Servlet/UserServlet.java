@@ -9,9 +9,7 @@ import com.Javarecruit.pojo.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -22,6 +20,7 @@ public class UserServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         PrintWriter out=response.getWriter();
+        HttpSession session = request.getSession();
         String phone = request.getParameter("phone");
         String upwd = request.getParameter("upwd");
         UserService us=new UserServiceImpl();
@@ -29,7 +28,9 @@ public class UserServlet extends HttpServlet {
         HrService hs=new HrServiceImpl();
         String login1 = hs.login(phone,upwd);
         if ("成功".equals(login)){
-//            request.getRequestDispatcher("showMore.jsp").forward(request,response);
+            session.setAttribute("phone",phone);
+            session.setAttribute("upwd",upwd);
+//           request.getRequestDispatcher("showMore.jsp").forward(request,response);
             out.print("hello");
         }else if ("成功".equals(login1)){
                 out.print("老板");

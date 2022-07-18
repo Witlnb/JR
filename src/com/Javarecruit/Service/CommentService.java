@@ -12,7 +12,7 @@ public interface CommentService {
 
     /**
      * 查看评论
-     * @param commentid 评论编号
+     * @param uid 用户编号
      * @return 结果
      */
     String chaComment(int uid);

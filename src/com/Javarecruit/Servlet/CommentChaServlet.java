@@ -22,7 +22,6 @@ public class CommentChaServlet extends HttpServlet {
         CommentService cs=new CommentServiceImpl();
         String s = cs.chaComment(i);
         if ("成功".equals(s)){
-
         }else{
             out.print("no");
         }
