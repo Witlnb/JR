@@ -265,6 +265,45 @@
         #LoginP{
             display:none;
         }
+        .admin{
+            position: relative;
+            border: solid;
+            border-radius: 20px;
+            top: 300px;
+            left: 400px;
+            width: 1000px;
+            height: 200px;
+        }
+        .information{
+            position: relative;
+            top: -130px;
+            left: 200px;
+            width: 700px;
+            height: 300px;
+        }
+        #Talk{
+            position: relative;
+            top: -50px;
+            left: 600px;
+            width: 700px;
+            height: 500px;
+        }
+        .new{
+            position: relative;
+            top:0px;
+            left: 0px;
+            border: none;
+            border-radius: 10px;
+            background-color: #43c7c4;
+            width:100px;
+            height:30px;
+            font-size: 20px;
+            color: white;
+            z-index: 1;
+        }
+        .one{
+            height: 50px;
+        }
     </style>
 </head>
 <body>
@@ -281,16 +320,24 @@
 <form action="Enroll.jsp" method="post" id="register">
     <input  class="inset" type="submit" name="register" value="注册">
 </form>
-<div>
 <c:forEach items="${user}" var="user">
-    ${user.uname}
-    ${user.phone}
-    ${user.email}
-    ${user.study}
-    ${user.job}
-    ${user.sex}<br>
-</c:forEach>
+<div class="admin">
+    <img src="Img/用户头像透明.png">
+    <div class="information">
+    用户名：${user.uname}&nbsp;|&nbsp;
+    性别：${user.sex}&nbsp;|&nbsp;
+    电话：${user.phone}<br>
+    学历：${user.study}&nbsp;|&nbsp;
+    电子邮箱：${user.email}&nbsp;|&nbsp;
+    工作经验：${user.job}<br>
+    住址：${user.address}
+    <form id="Talk" action="Talk.jsp" method="post">
+    <input type="submit" value="在线沟通" class="new">
+    </form><br>
+    </div>
 </div>
+    <div class="one"></div>
+</c:forEach>
 <!--<div id="Talk">-->
 <!--    <a href="Talk.jsp">在线沟通</a>-->
 <!--</div>-->
