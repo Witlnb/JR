@@ -239,11 +239,13 @@
         }
         .pwd{
             position: relative;
-            top: 40px;
+            top:130px;
+            left: 60px;
         }
         .loginU{
             position: relative;
-            top: 60px;
+            top: 180px;
+            left: 60px;
             width: 230px;
             height: 100px;
             border-radius: 10px;
@@ -258,7 +260,7 @@
     </style>
 </head>
 <body>
-<script type="text/javascript" src="jquery-3.6.0.js"></script>
+<script type="text/javascript" src="JS/jquery-3.6.0.js"></script>
 <script type="text/javascript" src="JS/TT.js"></script>
 <div id="head"></div>
 <div id="shows"><img src="Img/宣传语.png" class="show"></div>
@@ -273,7 +275,7 @@
 </form>
 <!--<div id="Talk">-->
 <!--    <a href="Talk.jsp">在线沟通</a>-->
-</div>
+<!--</div>-->
 <div  id ="d1">
     <div id="OWindow">
         <div id="pictureDiv" >
@@ -294,10 +296,18 @@
 <div id="LoginP">
     <div id="upbody"></div>
     <form action="HrServlet" method="post" id="loginPage">
-        <div class="name"> 手机号:&nbsp;<input type="text" name="phone"><br/><div>
-            <div class="pwd"> 密&emsp;码:&nbsp;<input type="password" name="cpwd"><br/><div>
-                <input type="submit" value="登录" class="loginU">
+        <div class="name"> 手机号:&nbsp;<input type="text" name="phone">
+            <br/>
+        </div>
+        <div class="pwd"> 密&emsp;码:&nbsp;<input type="password" name="cpwd"><br/></div>
+        <input type="submit" value="登录" class="loginU">
     </form>
 </div>
+<script>
+    login = function() {
+        $("#LoginP").css("display","block");
+        $("body").css("overflow-y"," hidden")
+    }
+</script>
 </body>
 </html>

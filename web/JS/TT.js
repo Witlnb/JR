@@ -9,7 +9,6 @@ $(document).ready(function () {
     }).mouseleave(function () {
         $(".User").hide();
     })
-
     var count = 1;
     var inum=1000;
     var met= function method1(){
@@ -67,9 +66,5 @@ $(document).ready(function () {
         div.animate({top:'210px'},"slow");
         div.animate({top:'230px'},"slow");
     }
-    $(".headTow").mouseenter(function () {
-        $(this).css("opacity","100%")
-    }).mouseleave(function () {
-        $(this).css("opacity","80%")
-    });
+
 })
