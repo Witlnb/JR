@@ -141,17 +141,6 @@
             background-color: darkgray;
 
         }
-        .login{
-            width: 50px;
-            height: 43px;
-            position: fixed;
-            top: 0;
-            left: 1509px;
-            color: #f5eded;
-            background-color: #88acce;
-            border:none;
-            z-index: 1;
-        }
         .inset{
             width: 50px;
             height: 43px;
@@ -240,11 +229,6 @@
             background-color: #bdbbbb;
             opacity: 50%;
         }
-        .name{
-            position: relative;
-            top:90px;
-            left: 60px;
-        }
         .pwd{
             position: relative;
             top:130px;
@@ -265,6 +249,68 @@
         #LoginP{
             display:none;
         }
+        .admin{
+            position: relative;
+            border: solid;
+            border-radius: 20px;
+            top: 300px;
+            left: 400px;
+            width: 1000px;
+            height: 200px;
+        }
+        .information{
+            position: relative;
+            top: -130px;
+            left: 200px;
+            width: 700px;
+            height: 300px;
+        }
+        #Talk{
+            position: relative;
+            top: -50px;
+            left: 600px;
+            width: 700px;
+            height: 500px;
+        }
+        .new{
+            position: relative;
+            top:0px;
+            left: 0px;
+            border: none;
+            border-radius: 10px;
+            background-color: #43c7c4;
+            width:100px;
+            height:30px;
+            font-size: 20px;
+            color: white;
+            z-index: 1;
+        }
+        .one{
+            height: 50px;
+        }
+        .login {
+            position: fixed;
+            width: 300px;
+            height: 100px;
+            left: 1100px;
+            z-index: 2;
+        }
+        .userHead{
+            position: relative;
+            top: 20px;
+            left: 200px;
+            width: 150px;
+        }
+        .ID{
+            position: relative;
+            top: 0px;
+            left: 150px;
+        }
+        .name{
+            position: relative;
+            top:-70px;
+            left: 200px;
+        }
     </style>
 </head>
 <body>
@@ -277,20 +323,25 @@
     <input type="text" class="searchOne" name="搜索"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>
-<input  class="login" type="button" name="login" value="登录" onclick="login()">
-<form action="Enroll.jsp" method="post" id="register">
-    <input  class="inset" type="submit" name="register" value="注册">
-</form>
-<div>
+<div class="login"><a href="ShowUI.jsp"><img src="Img/老板头像透明.png" class="userHead" alt="老板头像" title="${LoginH.company}"></a><b class="name">公司:${LoginH.company}<br><b class="ID">ID:${LoginH.companyid}</b></b></div>
 <c:forEach items="${user}" var="user">
-    ${user.uname}
-    ${user.phone}
-    ${user.email}
-    ${user.study}
-    ${user.job}
-    ${user.sex}<br>
-</c:forEach>
+<div class="admin">
+    <img src="Img/用户头像透明.png">
+    <div class="information">
+    用户名：${user.uname}&nbsp;|&nbsp;
+    性别：${user.sex}&nbsp;|&nbsp;
+    电话：${user.phone}<br>
+    学历：${user.study}&nbsp;|&nbsp;
+    电子邮箱：${user.email}&nbsp;|&nbsp;
+    工作经验：${user.job}<br>
+    住址：${user.address}
+    <form id="Talk" action="Talk.jsp" method="post">
+    <input type="submit" value="在线沟通" class="new">
+    </form><br>
+    </div>
 </div>
+    <div class="one"></div>
+</c:forEach>
 <!--<div id="Talk">-->
 <!--    <a href="Talk.jsp">在线沟通</a>-->
 <!--</div>-->

@@ -254,4 +254,31 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
         }
         return shows;
     }
+    //根据薪资范围展示的方法
+    @Override
+    public List<Show> showComp(Integer one) {
+        Connection con=conn();
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        List<Show> sh=new ArrayList<Show>();
+        String sql="select * from `show` where companyid = ? ";
+        try{
+            ps=con.prepareStatement(sql);
+            ps.setInt(1,one);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                Show ss=new Show();
+                ss.setSid(rs.getInt("sid"));
+                ss.setTitle(rs.getString("title"));
+                ss.setInformation(rs.getString("information"));
+                ss.setCompany(rs.getString("company"));
+                ss.setCompanyid(rs.getInt("companyid"));
+                ss.setMoney(rs.getInt("money"));
+                sh.add(ss);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return sh;
+    }
 }

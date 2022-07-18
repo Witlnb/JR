@@ -44,4 +44,8 @@ public interface ShowDao {
      * @return 当前页码对应的分页信息
      */
     List<Show> getPageByIndex(int index,int pageSize);
+    /**
+     * 根据公司id查询
+     */
+    public List<Show> showComp(Integer one);
 }
