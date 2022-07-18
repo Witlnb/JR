@@ -24,7 +24,7 @@ public class UserServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         PrintWriter out=response.getWriter();
-        HttpSession session = request.getSession();
+        HttpSession session1 = request.getSession();
         HttpSession session=request.getSession();
         String phone = request.getParameter("phone");
         String upwd = request.getParameter("upwd");
@@ -40,8 +40,8 @@ public class UserServlet extends HttpServlet {
         session.setAttribute("LoginH",h);
         //跳转页面
         if ("成功".equals(login)){
-            session.setAttribute("phone",phone);
-            session.setAttribute("upwd",upwd);
+            session1.setAttribute("phone",phone);
+            session1.setAttribute("upwd",upwd);
 //           request.getRequestDispatcher("showMore.jsp").forward(request,response);
             out.print("hello");
             response.sendRedirect("TheShow.jsp");
