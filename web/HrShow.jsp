@@ -141,17 +141,6 @@
             background-color: darkgray;
 
         }
-        .login{
-            width: 50px;
-            height: 43px;
-            position: fixed;
-            top: 0;
-            left: 1509px;
-            color: #f5eded;
-            background-color: #88acce;
-            border:none;
-            z-index: 1;
-        }
         .inset{
             width: 50px;
             height: 43px;
@@ -240,11 +229,6 @@
             background-color: #bdbbbb;
             opacity: 50%;
         }
-        .name{
-            position: relative;
-            top:90px;
-            left: 60px;
-        }
         .pwd{
             position: relative;
             top:130px;
@@ -304,6 +288,29 @@
         .one{
             height: 50px;
         }
+        .login {
+            position: fixed;
+            width: 300px;
+            height: 100px;
+            left: 1100px;
+            z-index: 2;
+        }
+        .userHead{
+            position: relative;
+            top: 20px;
+            left: 200px;
+            width: 150px;
+        }
+        .ID{
+            position: relative;
+            top: 0px;
+            left: 150px;
+        }
+        .name{
+            position: relative;
+            top:-70px;
+            left: 200px;
+        }
     </style>
 </head>
 <body>
@@ -316,10 +323,7 @@
     <input type="text" class="searchOne" name="搜索"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>
-<input  class="login" type="button" name="login" value="登录" onclick="login()">
-<form action="Enroll.jsp" method="post" id="register">
-    <input  class="inset" type="submit" name="register" value="注册">
-</form>
+<div class="login"><a href="ShowUI.jsp"><img src="Img/老板头像透明.png" class="userHead" alt="老板头像" title="${LoginU.uname}"></a><b class="name">用户名:${LoginU.uname}<br><b class="ID">ID:${LoginU.uid}</b></b></div>
 <c:forEach items="${user}" var="user">
 <div class="admin">
     <img src="Img/用户头像透明.png">
