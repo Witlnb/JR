@@ -1,7 +1,10 @@
 package com.Javarecruit.Servlet;
 
+import com.Javarecruit.Service.HrService;
+import com.Javarecruit.Service.ServiceImpl.HrServiceImpl;
 import com.Javarecruit.Service.ServiceImpl.UserServiceImpl;
 import com.Javarecruit.Service.UserService;
+import com.Javarecruit.pojo.Hr;
 import com.Javarecruit.pojo.User;
 
 import javax.servlet.ServletException;
@@ -19,15 +22,19 @@ public class UserServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         PrintWriter out=response.getWriter();
-        String uname = request.getParameter("uname");
+        String phone = request.getParameter("phone");
         String upwd = request.getParameter("upwd");
         UserService us=new UserServiceImpl();
-        String login = us.login(uname, upwd);
+        String login = us.login(phone, upwd);
+        HrService hs=new HrServiceImpl();
+        String login1 = hs.login(phone,upwd);
         if ("成功".equals(login)){
 //            request.getRequestDispatcher("showMore.jsp").forward(request,response);
             out.print("hello");
+        }else if ("成功".equals(login1)){
+                out.print("老板");
         }else{
-           response.sendRedirect("UserLogin.jsp");
+            response.sendRedirect("UserLogin.jsp");
         }
     }
 

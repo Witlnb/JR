@@ -11,11 +11,19 @@ public class Hr {
     private String phone;
     //地址
     private String caddress;
+    //密码
+    private String cpwd;
+
+    public String getCpwd() {
+        return cpwd;
+    }
+
+    public void setCpwd(String cpwd) {
+        this.cpwd = cpwd;
+    }
+
     //预计薪资
     private int hmoney;
-    //密码
-    private String cwpd;
-
     public int getHmoney() {
         return hmoney;
     }
@@ -62,11 +70,5 @@ public class Hr {
 
     public void setCaddress(String caddress) {
         this.caddress = caddress;
-    }
-    public String getCwpd() {
-        return cwpd;
-    }
-    public void setCwpd(String cwpd) {
-        this.cwpd = cwpd;
     }
 }

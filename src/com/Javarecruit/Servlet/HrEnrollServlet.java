@@ -29,7 +29,7 @@ public class HrEnrollServlet extends HttpServlet {
         hr.setHmoney(parseInt);
         hr.setCaddress(caddress);
         hr.setPhone(phone);
-        hr.setCwpd(cpwd);
+        hr.setCpwd(cpwd);
         HrService hrService = new HrServiceImpl();
         int enroll = hrService.enroll(hr);
         if (enroll!=0){

@@ -39,20 +39,20 @@ public class UserDaoImpl extends BaseDao implements UserDao  {
 
     /**
      * 查询
-     * @param uname 用户名
+     * @param phone 用户名
      * @param pwd 密码
      * @return
      */
     @Override
-    public User querybynamepwd(String uname, String pwd) {
+    public User querybynamepwd(String phone, String pwd) {
         Connection con = conn();
         PreparedStatement ps = null;
         ResultSet rs = null;
         User u = new User();
-        String sql = "select * from user where uname=? and upwd=?";
+        String sql = "select * from user where phone=? and upwd=?";
         try {
             ps = con.prepareStatement(sql);
-            ps.setString(1, uname);
+            ps.setString(1, phone);
             ps.setString(2, pwd);
             rs = ps.executeQuery();
             if (rs.next()) {

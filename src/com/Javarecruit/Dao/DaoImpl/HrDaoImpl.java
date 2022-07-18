@@ -19,7 +19,7 @@ public class HrDaoImpl extends BaseDao implements HrDao {
     @Override
     public int addByHr(Hr hr) {
         String sql = "insert into hr(cshow,company,phone,caddress,hmoney,cpwd) values(?,?,?,?,?,?)";
-        Object[] objects ={hr.getCshow(),hr.getCompany(),hr.getPhone(),hr.getCaddress(),hr.getHmoney(),hr.getCwpd()};
+        Object[] objects ={hr.getCshow(),hr.getCompany(),hr.getPhone(),hr.getCaddress(),hr.getHmoney(),hr.getCpwd()};
         int insert = exceuteUpdate(sql, objects);
         return insert;
     }
@@ -48,7 +48,7 @@ public class HrDaoImpl extends BaseDao implements HrDao {
                 h.setCompany(rs.getString("company"));
                 h.setPhone(rs.getString("phone"));
                 h.setCaddress(rs.getString("caddress"));
-                h.setCwpd(rs.getString("cpwd"));
+                h.setCpwd(rs.getString("cpwd"));
                 h.setHmoney(rs.getInt("hmoney"));
             }
         } catch (SQLException e) {
