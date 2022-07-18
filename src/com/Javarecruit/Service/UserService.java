@@ -38,5 +38,8 @@ public interface UserService {
      * @return 删除成功失败
      */
     String deleteComment(int commentid);
-
+    /**
+     * 储存用户信息
+     */
+    public User sessionUser(String phone, String pwd);
 }

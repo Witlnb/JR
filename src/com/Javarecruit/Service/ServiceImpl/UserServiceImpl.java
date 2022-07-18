@@ -5,6 +5,7 @@ import com.Javarecruit.Dao.UserDao;
 import com.Javarecruit.Service.UserService;
 import com.Javarecruit.pojo.Comment;
 import com.Javarecruit.pojo.User;
+import com.sun.org.apache.regexp.internal.RE;
 
 public class UserServiceImpl implements UserService {
     /**
@@ -64,6 +65,13 @@ public class UserServiceImpl implements UserService {
             return "成功";
         }
         return "失败";
+    }
+
+    @Override
+    public User sessionUser(String phone, String pwd) {
+        UserDao ud=new UserDaoImpl();
+        User uu = ud.querybynamepwd(phone, pwd);
+        return uu;
     }
 
 }

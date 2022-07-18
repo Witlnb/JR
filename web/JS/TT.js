@@ -66,5 +66,4 @@ $(document).ready(function () {
         div.animate({top:'210px'},"slow");
         div.animate({top:'230px'},"slow");
     }
-
 })
