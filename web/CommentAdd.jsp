@@ -12,9 +12,9 @@
 </head>
 <body>
 <form action="CommentAddServlet" method="post">
-    评论内容:<input type="text" name="cmtscontent"><br/>
-    评论作者:<input type="text" name="uid"><br/>
-    发布时间:<input type="text" name="cmtstime"><br/>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<textarea name="cmtscontent"> 评论内容:</textarea><br/>
+    评论作者:<input type="text" name="uid" size="19"><br/>
+    发布时间:<input type="text" name="cmtstime" size="19"><br/>
     <input type="submit" value="评论">
 </form>
 </body>
