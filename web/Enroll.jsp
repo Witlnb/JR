@@ -16,17 +16,17 @@
     <style type="text/css">
     </style>
 </head>
-<a>
-    <img src="img/logo.png"><br>
-    <img src="img/xuanchuan.png">
-</a>
-<!--主体-->
-<div id="content">
+<body>
+    <a href="First.html">
+        <img src="Img/logo透明.png" class="i1">
+    </a>
+    <!--主体-->
+    <div id="content">
     <!--头部-->
     <div class="content-header clearfix">
         <ul id="tit">
             <span class="select"><li><a  class="current" >用户注册</a></li></span>
-           <span><li><a >企业注册</a></li></span>
+           <span><li><a>企业注册</a></li></span>
         </ul>
     </div>
     <!--内容-->
