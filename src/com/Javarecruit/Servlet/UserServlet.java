@@ -31,16 +31,16 @@ public class UserServlet extends HttpServlet {
         String login = us.login(phone, upwd);
         HrService hs=new HrServiceImpl();
         String login1 = hs.login(phone,upwd);
+        //储存用户信息
         User u =us.sessionUser(phone,upwd);
         session.setAttribute("LoginU",u);
-//        Hr h = hs.SessionH(phone,upwd);
-//        session.setAttribute("LoginH",h);
+        //储存HR信息
+        Hr h = hs.SessionH(phone,upwd);
+        session.setAttribute("LoginH",h);
+        //跳转页面
         if ("成功".equals(login)){
-//            request.getRequestDispatcher("showMore.jsp").forward(request,response);
-            //储存用户信息
-            out.print("hello");
+            response.sendRedirect("TheShow.jsp");
         }else if ("成功".equals(login1)){
-            //储存用户信息
                 out.print("老板");
         }else{
             response.sendRedirect("LoginFail.jsp");

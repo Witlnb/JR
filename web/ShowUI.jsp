@@ -12,7 +12,6 @@
 <head>
     <title>Title</title>
 </head>
-<body>
 用户id:${LoginU.uid}
 <br>
 用户名:${LoginU.uname}
@@ -29,6 +28,8 @@
 <br>
 现住址:${LoginU.address}
 <br>
-
+<form action="MuI.jsp" method="post">
+    <input type="submit" value="修改个人信息" name="sub">
+</form>
 </body>
 </html>
