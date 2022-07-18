@@ -51,7 +51,6 @@ public class UserServlet extends HttpServlet {
             out.print("hello");
             response.sendRedirect("TheShow.jsp");
         }else if ("成功".equals(login1)){
-                out.print("老板");
                 request.getRequestDispatcher("HrShow.jsp").forward(request,response);
         }else{
             response.sendRedirect("LoginFail.jsp");

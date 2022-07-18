@@ -67,7 +67,7 @@ public class UserServiceImpl implements UserService {
         }
         return "失败";
     }
-    
+
     @Override
     public User sessionUser(String phone, String pwd) {
         UserDao ud=new UserDaoImpl();
@@ -85,6 +85,5 @@ public class UserServiceImpl implements UserService {
         List<User> us=udi.queryAll();
         return us;
     }
-
 
 }
