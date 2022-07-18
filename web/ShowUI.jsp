@@ -11,7 +11,21 @@
 <html>
 <head>
     <title>Title</title>
+    <link href="Css/Enroll.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .show{
+            position: absolute;
+            top: 300px;
+            left: 740px;
+            font-size: 30px;
+        }
+        .show1{
+            font-size: 30px;
+            }
+    </style>
 </head>
+<body class="content-body">
+<div class="show">
 用户id:${LoginU.uid}
 <br>
 用户名:${LoginU.uname}
@@ -29,7 +43,8 @@
 现住址:${LoginU.address}
 <br>
 <form action="MuI.jsp" method="post">
-    <input type="submit" value="修改个人信息" name="sub">
+    <input type="submit" value="修改个人信息" name="sub" class="show1">
 </form>
+</div>
 </body>
 </html>
