@@ -18,17 +18,17 @@ public class RangeServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out=response.getWriter();
-        Integer one= Integer.parseInt(request.getParameter("one"));
-        Integer two= Integer.parseInt(request.getParameter("two"));
+        String money=request.getParameter("o");
+        System.out.println(money);
+        System.out.println(money.substring(0,4));
+        System.out.println(money.substring(5,9));
+        Integer one= Integer.parseInt(money.substring(0,4));
+        Integer two= Integer.parseInt(money.substring(5,9));
         ShowServiceImpl ssi=new ShowServiceImpl();
         List<Show> ss=ssi.twoMoney(one,two);
         request.setAttribute("money",ss);
-        System.out.println(one);
-        System.out.println(two);
-        if(one==0||two==0||one>two){
-            request.getRequestDispatcher("Range.jsp").forward(request,response);
-        }else{
-            request.getRequestDispatcher("RangeServlet.jsp").forward(request,response);
+        if(one==0000&&two==0000) {
+            request.getRequestDispatcher("Hall.jsp").forward(request, response);
         }
         out.flush();
         out.close();

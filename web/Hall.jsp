@@ -57,11 +57,54 @@
             height: 125px;
             overflow-y: auto;
         }
+        .one {
+            height: 25px;
+            width: 200px;
+            padding-left: 5px;
+        }
+
+        .o {
+            height: 25px;
+            margin-left: 5px;
+        }
+
+        .o:hover {
+            background-color: #1E90FF;
+        }
+
+        .First {
+            border: solid 1px #767676;
+            width: 209px;
+            height: 125px;
+            overflow-y: auto;
+        }
+        /*.two {*/
+            /*height: 25px;*/
+            /*width: 200px;*/
+            /*padding-left: 5px;*/
+        /*}*/
+
+        /*.p {*/
+            /*height: 25px;*/
+            /*margin-left: 5px;*/
+        /*}*/
+
+        /*.p:hover {*/
+            /*background-color: #1E90FF;*/
+        /*}*/
+
+        /*.Second {*/
+            /*border: solid 1px #767676;*/
+            /*width: 209px;*/
+            /*height: 125px;*/
+            /*overflow-y: auto;*/
+        /*}*/
 
         ::-webkit-scrollbar {
             /*隐藏滚轮*/
             display: none;
         }
+
 
         .hidden {
             display: none;
@@ -104,5 +147,21 @@
         ${show.money}<br>
     </c:forEach>
 </div>
+<div><input class="one" placeholder="请点击或输入搜索字段..." onclick="showRange()" oninput="range(this.value)"
+            onporpertychange="range(this.value)" onchange="range(this.value)"></div>
+<div class="First hidden">
+    <div class="o">0000-0000</div>
+    <div class="o">2000-3000</div>
+    <div class="o">3000-4000</div>
+    <div class="o">4000-5000</div>
+    <div class="o">5000-6000</div>
+    <div class="o">2000-6000</div>
+</div>
+<c:forEach items="${money}" var="show">
+    ${show.title}
+    ${show.information}
+    ${show.company}
+    ${show.money}<br/>
+</c:forEach>
 </body>
 </html>
