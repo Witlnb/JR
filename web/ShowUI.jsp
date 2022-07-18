@@ -127,7 +127,21 @@
             left: 150px;
         }
     </style>
+    <link href="Css/Enroll.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .show{
+            position: absolute;
+            top: 300px;
+            left: 740px;
+            font-size: 30px;
+        }
+        .show1{
+            font-size: 30px;
+            }
+    </style>
 </head>
+<body class="content-body">
+<div class="show">
 <script type="text/javascript" src="JS/jquery-3.6.0.js"></script>
 <script type="text/javascript" src="JS/TT.js"></script>
 <div class="login"><a href="ShowUI.jsp"><img src="Img/用户头像透明.png" class="userHead" alt="用户头像" title="${LoginU.uname}"></a><b>用户名:${LoginU.uname}<br><b class="ID">ID:${LoginU.uid}</b></b></div>

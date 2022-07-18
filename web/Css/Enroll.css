@@ -20,8 +20,8 @@ html{
 }
 body{
     font-size: 1.4rem;
-    background-image: url("../Img/true.jpg");
-    background-repeat: no-repeat;
+    background-image: url("../Img/蓝白背景.png");
+    background-repeat: repeat;
 }
 a{
     color: #4169E1;

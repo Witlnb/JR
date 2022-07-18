@@ -110,12 +110,13 @@ public class UserDaoImpl extends BaseDao implements UserDao  {
             rs=ps.executeQuery();
             while(rs.next()){
                 User u=new User();
-                u.setUpwd(rs.getString("uname"));
+                u.setUname(rs.getString("uname"));
                 u.setPhone(rs.getString("phone"));
                 u.setEmail(rs.getString("email"));
                 u.setStudy(rs.getString("study"));
                 u.setJob(rs.getString("job"));
                 u.setSex(rs.getString("sex"));
+                u.setAddress(rs.getString("address"));
                 us.add(u);
             }
         } catch (SQLException e) {
