@@ -20,6 +20,7 @@
     <a href="First.html">
         <img src="Img/logo透明.png" class="i1">
     </a>
+    <div id="All">
     <!--主体-->
     <div id="content">
     <!--头部-->
@@ -83,6 +84,9 @@
                         <input type="submit" value="注&nbsp;册" class="btn">
                     </form>
                 </li>
+                <div class="null">
+
+                </div>
                 <li id="2">
                     <div class="dom" >
                     <form action="HrEnrollServlet" method="post">
@@ -112,6 +116,7 @@
         </div>
     </div>
 </div>
+    </div>
     <script>
         $('#tit span').click(function() {
             var i = $(this).index();//下标第一种写法
