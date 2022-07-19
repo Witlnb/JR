@@ -47,5 +47,13 @@ public interface ShowDao {
     /**
      * 根据公司id查询
      */
-    public List<Show> showComp(Integer one);
+    public Show showComp(Integer one);
+    /**
+     * 模糊查询公司发布信息
+     */
+    public List<Show> queryBlure(String a);
+    /**
+     * 模糊查询标签
+     */
+    public List<Show> queryBlureTitle(String a);
 }

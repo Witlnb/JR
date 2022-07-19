@@ -20,17 +20,14 @@ public class RangeServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session=request.getSession();
         PrintWriter out=response.getWriter();
-        String money=request.getParameter("o");
-        Integer one= Integer.parseInt(money.substring(0,4));
-        Integer two= Integer.parseInt(money.substring(5,9));
-        System.out.println(one);
-        System.out.println(two);
+        Integer one= Integer.parseInt(request.getParameter("one"));
+        Integer two= Integer.parseInt(request.getParameter("two"));
         ShowServiceImpl ssi=new ShowServiceImpl();
         List<Show> ss=ssi.twoMoney(one,two);
-        System.out.println(ss.get(0).getTitle());
         session.setAttribute("money",ss);
-        if(one==0000&&two==0000) {
-            request.getRequestDispatcher("Hall.jsp").forward(request, response);
+        request.getRequestDispatcher("ShowRange.jsp").forward(request,response);
+        if(one==0||two==0||one>=two) {
+            request.getRequestDispatcher("ShowRange.jsp").forward(request, response);
         }
         out.flush();
         out.close();

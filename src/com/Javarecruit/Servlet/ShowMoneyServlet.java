@@ -14,6 +14,7 @@ import java.io.PrintWriter;
 import java.util.List;
 import java.util.regex.Pattern;
 
+
 @WebServlet(name = "ShowMoneyServlet",urlPatterns = {"/ShowMoneyServlet"})
 public class ShowMoneyServlet extends HttpServlet {
     @Override
@@ -22,13 +23,14 @@ public class ShowMoneyServlet extends HttpServlet {
         response.setContentType("text/html;charset=utf-8");
         PrintWriter out=response.getWriter();
         HttpSession session=request.getSession();
-        Integer  name= Integer.parseInt(request.getParameter("iop"));
+        Integer  name= Integer.parseInt(request.getParameter("money"));
         ShowServiceImpl ssi=new ShowServiceImpl();
         List<Show> sh=ssi.money(name);
         System.out.println(name);
         session.setAttribute("iop",sh);
+        request.getRequestDispatcher("MoneyShow.jsp").forward(request,response);
         if(name==0){
-            request.getRequestDispatcher("Hall.jsp").forward(request,response);
+            request.getRequestDispatcher("MoneyShow.jsp").forward(request,response);
         }
 //        if(name== 0){
 //            request.getRequestDispatcher("ShowMoney.jsp").forward(request,response);

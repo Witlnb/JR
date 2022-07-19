@@ -20,6 +20,9 @@
         .submit{
             font-size: 30px;
         }
+        body{
+            background-image: url("Img/蓝白背景.png");
+        }
     </style>
 </head>
 <body>
