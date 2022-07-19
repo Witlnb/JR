@@ -12,15 +12,23 @@
 </head>
 <body>
     <form action="ShowAddServlet" method="post">
-        标   签:<input type="text" name="title">
+        标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;签:<input type="text" name="title" size="12">
         <br/>
-        招聘信息:<input type="text" name="show">
+        招聘信息:<select name="show">
+            <option value="请选择">请选择</option>
+            <option value="java">java</option>
+            <option value="java全栈">java全栈</option>
+    </select>
         <br/>
-        公司名称:<input type="text" name="company">
+        公司名称:<select name="company">
+            <option value="请选择">请选择</option>
+            <option value="公司1">公司1</option>
+            <option value="公司2">公司2</option>
+    </select>
         <br/>
-        公司编号:<input type="text" name="companyid">
+        公司编号:<input type="text" name="companyid" size="11">
         <br/>
-        薪资:<input type="text" name="money">
+        薪&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;资:<input type="text" name="money" size="12">
         <br/>
         <input type="submit" value="发布">
     </form>
