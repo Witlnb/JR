@@ -29,7 +29,7 @@ public class RangeServlet extends HttpServlet {
         List<Show> ss=ssi.twoMoney(one,two);
         System.out.println(ss.get(0).getTitle());
         session.setAttribute("money",ss);
-        if(one==0000&&two==0000) {
+        if(one==0||two==0||one>=two) {
             request.getRequestDispatcher("Hall.jsp").forward(request, response);
         }
         out.flush();
