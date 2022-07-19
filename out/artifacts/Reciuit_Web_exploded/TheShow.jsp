@@ -192,7 +192,7 @@
 <div class="login"><a href="ShowUI.jsp"><img src="Img/用户头像透明.png" class="userHead" alt="用户头像" title="${LoginU.uname}"></a><b>用户名:${LoginU.uname}<br><b class="ID">ID:${LoginU.uid}</b></b></div>
 <div id="head"></div>
 <div id="shows"><img src="Img/宣传语.png" class="show"></div>
-<div class="headTow"><img src="Img/logo透明.png" class="logo"></div>
+<div class="headTow"><a href="First.html"><img src="Img/logo透明.png" class="logo"></a></div>
 <form action="UserSearServlet" method="post" id="formOne">
     <input type="text" class="searchOne" name="searchOne"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
@@ -200,7 +200,6 @@
 <div class="showAll">
 <form method="post" action="TitleTest" class="themoney">
     标签<select name="title">
-    <option value="">请选择</option>
     <option value="c++">c++</option>
     <option value="java">java</option>
 </select>
@@ -209,7 +208,6 @@
 <form method="post" action="ShowMoneyServlet" class="themoney">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     薪资<select name="money">
-    <option value="0">请选择</option>
     <option value="3000">3000以下</option>
     <option value="4000">4000以下</option>
     <option value="5000">5000以下</option>
@@ -220,12 +218,10 @@
 <form method="post" action="MoneyTitleServlet" class="themoney">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     标签<select name="title">
-    <option value="">请选择</option>
     <option value="c++">c++</option>
     <option value="java">java</option>
 </select>
     薪资<select name="money">
-    <option value="0">请选择</option>
     <option value="3000">3000以下</option>
     <option value="4000">4000以下</option>
     <option value="5000">5000以下</option>
@@ -236,7 +232,6 @@
 <form method="post" action="RangeServlet" class="themoney">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     请选择范围<select name="one">
-    <option value="0">请选择</option>
     <option value="2000">2000</option>
     <option value="3000">3000</option>
     <option value="4000">4000</option>
@@ -244,7 +239,6 @@
     <option value="6000">6000</option>
 </select>
     <select name="two">
-        <option value="0">请选择</option>
         <option value="2000">2000</option>
         <option value="3000">3000</option>
         <option value="4000">4000</option>
@@ -253,6 +247,10 @@
     </select>
     <input value="查询" type="submit">
 </form>
+    <form method="post" action="Test" class="themoney">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input value="清除筛选" type="submit">
+    </form>
 </div>
 <c:forEach items="${title}" var="show">
     <div class="First">

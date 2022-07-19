@@ -26,6 +26,11 @@
         select,option{
             font-size: 30px;
         }
+        .return{
+            position: absolute;
+            top: -240px;
+            right: -610px;
+        }
     </style>
 </head>
 <body class="content-body">
@@ -80,6 +85,7 @@
     <input type="submit" value="提交" name="button" class="show1">
     <span></span>
 </form>
+    <a href="HrShow.jsp" class="return"><input type="button" value="返回首页"></a>
 </div>
 </body>
 </html>

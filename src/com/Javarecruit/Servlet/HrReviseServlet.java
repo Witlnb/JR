@@ -16,9 +16,11 @@ public class HrReviseServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=utf-8");
-        Integer companyid = Integer.parseInt(request.getParameter("companyid"));
+
+        Integer  companyid = Integer.parseInt(request.getParameter("companyid"));
+        Integer   hmoney = Integer.parseInt(request.getParameter("hmoney"));
+
         String cshow = request.getParameter("cshow");
         String company = request.getParameter("company");
         String phone = request.getParameter("phone");
@@ -29,11 +31,15 @@ public class HrReviseServlet extends HttpServlet {
         h.setCompany(company);
         h.setCompanyid(companyid);
         h.setCshow(cshow);
+        h.setHmoney(hmoney);
         HrServiceImpl hh = new HrServiceImpl();
         PrintWriter out = response.getWriter();
-        out.println(hh.reviseHr(h));
-        out.flush();
-        out.close();
+        int a = hh.reviseHr(h);
+        if (a > 0){
+            response.sendRedirect("ShowHItwo.jsp");
+        }else{
+            response.sendRedirect("HrRevise.jsp");
+        }
     }
 
     @Override

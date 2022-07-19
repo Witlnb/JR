@@ -11,14 +11,23 @@
 <head>
     <title>Title</title>
     <style type="text/css">
+        body{
+            background-image: url("Img/蓝白背景.png");
+        }
         .ShowALL{
             position: absolute;
             top: 300px;
             left: 740px;
             font-size: 30px;
         }
-        body{
-            background-image: url("Img/蓝白背景.png");
+        input{
+            font-size: 30px;
+            color: #1E90FF;
+        }
+        .return{
+            position: absolute;
+            top: 60px;
+            right: 60px;
         }
     </style>
 </head>
@@ -35,7 +44,7 @@
     <br>
     公司地址:${LoginH.caddress}
     <br>
-    <a href="HrRevise.jsp">修改信息</a>
+    <a href="HrRevise.jsp"><input type="button" value="修改信息" ></a>
     <br>
     展示信息:
     展示id:${showComp.sid}
@@ -50,7 +59,8 @@
     <br>
     期望薪资${showComp.money}
     <br>
-    <a href="ShowRervlet.jsp">修改信息</a>
+    <a href="ShowRervlet.jsp"><input type="button" value="修改信息"></a>
 </div>
+<a href="HrShow.jsp" class="return"><input type="button" value="返回首页"></a>
 </body>
 </html>

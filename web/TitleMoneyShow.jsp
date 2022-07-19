@@ -192,7 +192,7 @@
 <div class="login"><a href="ShowUI.jsp"><img src="Img/用户头像透明.png" class="userHead" alt="用户头像" title="${LoginU.uname}"></a><b>用户名:${LoginU.uname}<br><b class="ID">ID:${LoginU.uid}</b></b></div>
 <div id="head"></div>
 <div id="shows"><img src="Img/宣传语.png" class="show"></div>
-<div class="headTow"><img src="Img/logo透明.png" class="logo"></div>
+<div class="headTow"><a href="First.html"><img src="Img/logo透明.png" class="logo"></a></div>
 <form action="UserSearServlet" method="post" id="formOne">
     <input type="text" class="searchOne" name="搜索"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">

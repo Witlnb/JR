@@ -17,6 +17,7 @@ public class ShowReviseServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=utf-8");
+        PrintWriter out = response.getWriter();
         Integer sid = Integer.parseInt(request.getParameter("sid"));
         Integer companyid = Integer.parseInt(request.getParameter("companyid"));
         Integer money = Integer.parseInt(request.getParameter("money"));
@@ -24,17 +25,20 @@ public class ShowReviseServlet extends HttpServlet {
         String information = request.getParameter("information");
         String company = request.getParameter("company");
         Show s = new Show();
+        ShowServiceImpl ss = new ShowServiceImpl();
         s.setCompany(company);
         s.setCompanyid(companyid);
         s.setSid(sid);
         s.setInformation(information);
         s.setMoney(money);
         s.setTitle(title);
-        ShowServiceImpl ss = new ShowServiceImpl();
-        PrintWriter out = response.getWriter();
-        out.println(ss.revise(s));
-        out.flush();
-        out.close();
+        int a = ss.revise(s);
+        if(a > 0){
+            response.sendRedirect("ShowHItwo.jsp");
+        }else {
+            response.sendRedirect("ShowRervlet.jsp");
+        }
+
     }
 
     @Override

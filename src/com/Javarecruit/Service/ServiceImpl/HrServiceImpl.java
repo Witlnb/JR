@@ -20,7 +20,7 @@ public class HrServiceImpl implements HrService {
 
     @Override
     public int reviseHr(Hr h) {
-        HrDao hrDao = new HrDaoImpl();
+        HrDaoImpl hrDao = new HrDaoImpl();
         return hrDao.reviseHr(h);
     }
 

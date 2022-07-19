@@ -66,8 +66,8 @@ public class HrDaoImpl extends BaseDao implements HrDao {
      */
     @Override
     public int reviseHr(Hr h) {
-        String sql = "update Hr set cshow = ? , company = ? ,phone = ? ,  address=?  WHERE companyid = ?";
-        Object[] o = {h.getCshow(),h.getCompany(),h.getPhone(),h.getCaddress(),h.getCompanyid()};
+        String sql = "update hr set cshow = ? , company = ? ,phone = ? ,  caddress=?  , hmoney = ? WHERE companyid = ?";
+        Object[] o = {h.getCshow(),h.getCompany(),h.getPhone(),h.getCaddress(),h.getHmoney(),h.getCompanyid()};
         return exceuteUpdate(sql,o);
     }
 }

@@ -11,6 +11,9 @@
 <head>
     <title>Title</title>
     <style type="text/css">
+        body{
+            background-image: url("Img/蓝白背景.png");
+        }
         .HIshow{
             position: absolute;
             top: 300px;
@@ -26,22 +29,32 @@
         textarea{
             font-size: 30px;
         }
+        .return{
+            position: absolute;
+            top: 60px;
+            right: 60px;
+        }
     </style>
 </head>
 <body>
 <form action="HrReviseServlet" method="post" class="HIshow">
-    公司编号:${LoginH.companyid}
+    公司编号:<input type="text" name="companyid" value="${LoginH.companyid}" required readonly="readonly">
     <br>
-    公司信息:<input type="text" name="cshow" value="${LoginH.cshow}">
+    金额:<input type="text" name="hmoney" value="${LoginH.hmoney}" required readonly="readonly">
     <br>
-    公司名称:<input type="text" name="company" value="${LoginH.company}">
+    密码:<input type="text" name="cpwd" value="${LoginH.cpwd}" required>
     <br>
-    公司电话:<input type="text" name="phone" value="${LoginH.phone}">
+    公司信息:<input type="text" name="cshow" value="${LoginH.cshow}" required>
     <br>
-    公司地址:<input type="text" name="caddress" value="${LoginH.caddress}">
+    公司名称:<input type="text" name="company" value="${LoginH.company}" required>
+    <br>
+    公司电话:<input type="text" name="phone" value="${LoginH.phone}" required>
+    <br>
+    公司地址:<input type="text" name="caddress" value="${LoginH.caddress}" required>
     <br>
     <input type="submit" name="提交" class="submit">
 </form>
+<a href="HrShow.jsp" class="return"><input type="button" value="返回首页"></a>
 </body>
 </html>
 

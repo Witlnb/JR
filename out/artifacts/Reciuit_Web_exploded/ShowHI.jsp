@@ -10,19 +10,35 @@
 <html>
 <head>
     <title>Title</title>
+    <style type="text/css">
+        .HIshow{
+            position: absolute;
+            top: 300px;
+            left: 740px;
+            font-size: 30px;
+        }
+        .submit{
+            font-size: 30px;
+        }
+        body{
+            background-image: url("Img/蓝白背景.png");
+        }
+    </style>
 </head>
 <body>
-公司信息:
-公司编号:${LoginH.companyid}
-<br>
-公司信息:${LoginH.cshow}
-<br>
-公司名称:${LoginH.company}
-<br>
-公司电话:${LoginH.phone}
-<br>
-公司地址:${LoginH.caddress}
-<br>
-<a href="HrRevise.jsp">修改信息</a>
+<form class="HIshow" action="HrRevise.jsp">
+    公司信息:
+    公司编号:${LoginH.companyid}
+    <br>
+    公司信息:${LoginH.cshow}
+    <br>
+    公司名称:${LoginH.company}
+    <br>
+    公司电话:${LoginH.phone}
+    <br>
+    公司地址:${LoginH.caddress}
+    <br>
+    <input type="submit" name="submit" value="修改信息" CLASS="submit">
+</form>
 </body>
 </html>
