@@ -21,12 +21,14 @@ public class ShowTitleServlet extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         HttpSession session=request.getSession();
         PrintWriter out=response.getWriter();
-        String name=request.getParameter("st");
+        String name=request.getParameter("title");
         ShowServiceImpl sdi=new ShowServiceImpl();
         List<Show> sh=sdi.title(name);
         session.setAttribute("title",sh);
+        System.out.println(name);
+        request.getRequestDispatcher("TheShow.jsp").forward(request,response);
         if("--请选择--".equals(name)){
-            request.getRequestDispatcher("Hall.jsp").forward(request,response);
+            request.getRequestDispatcher("TheShow.jsp").forward(request,response);
         }
 //        if("".equals(name)){
 //            request.getRequestDispatcher("show.jsp").forward(request,response);
