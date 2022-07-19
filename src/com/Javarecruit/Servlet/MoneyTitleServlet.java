@@ -27,9 +27,6 @@ public class MoneyTitleServlet extends HttpServlet {
         List<Show> sh=ssi.titleMoney(num,name);
         session.setAttribute("show",sh);
         request.getRequestDispatcher("TitleMoneyShow.jsp").forward(request,response);
-        if("".equals(name)||num==0) {
-            request.getRequestDispatcher("TitleMoneyShow.jsp").forward(request, response);
-        }
         out.flush();
         out.close();
     }

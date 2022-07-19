@@ -26,7 +26,7 @@ public class RangeServlet extends HttpServlet {
         List<Show> ss=ssi.twoMoney(one,two);
         session.setAttribute("money",ss);
         request.getRequestDispatcher("ShowRange.jsp").forward(request,response);
-        if(one==0||two==0||one>=two) {
+        if(one>=two) {
             request.getRequestDispatcher("ShowRange.jsp").forward(request, response);
         }
         out.flush();
