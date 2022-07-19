@@ -200,7 +200,6 @@
 <div class="showAll">
 <form method="post" action="TitleTest" class="themoney">
     标签<select name="title">
-    <option value="">请选择</option>
     <option value="c++">c++</option>
     <option value="java">java</option>
 </select>
@@ -209,7 +208,6 @@
 <form method="post" action="ShowMoneyServlet" class="themoney">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     薪资<select name="money">
-    <option value="0">请选择</option>
     <option value="3000">3000以下</option>
     <option value="4000">4000以下</option>
     <option value="5000">5000以下</option>
@@ -220,12 +218,10 @@
 <form method="post" action="MoneyTitleServlet" class="themoney">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     标签<select name="title">
-    <option value="">请选择</option>
     <option value="c++">c++</option>
     <option value="java">java</option>
 </select>
     薪资<select name="money">
-    <option value="0">请选择</option>
     <option value="3000">3000以下</option>
     <option value="4000">4000以下</option>
     <option value="5000">5000以下</option>
@@ -236,7 +232,6 @@
 <form method="post" action="RangeServlet" class="themoney">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     请选择范围<select name="one">
-    <option value="0">请选择</option>
     <option value="2000">2000</option>
     <option value="3000">3000</option>
     <option value="4000">4000</option>
@@ -244,7 +239,6 @@
     <option value="6000">6000</option>
 </select>
     <select name="two">
-        <option value="0">请选择</option>
         <option value="2000">2000</option>
         <option value="3000">3000</option>
         <option value="4000">4000</option>

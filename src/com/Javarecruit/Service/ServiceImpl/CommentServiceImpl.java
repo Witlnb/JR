@@ -17,12 +17,9 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public String chaComment(int uid) {
+    public Comment chaComment(int uid) {
         CommentDao cd=new CommentDaoImpl();
         Comment comment = cd.chaComment(uid);
-        if (comment!=null){
-            return "成功";
-        }
-        return "失败";
+        return comment;
     }
 }

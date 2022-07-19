@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -18,17 +19,14 @@ public class MoneyTitleServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html;charset=UTF-8");
+        HttpSession session=request.getSession();
         PrintWriter out=response.getWriter();
         String name=request.getParameter("title");
         Integer num= Integer.parseInt(request.getParameter("money"));
         ShowServiceImpl ssi=new ShowServiceImpl();
         List<Show> sh=ssi.titleMoney(num,name);
-        request.setAttribute("show",sh);
-        if("".equals(name)||num==0){
-            request.getRequestDispatcher("MoneyTitle.jsp").forward(request,response);
-        }else{
-            request.getRequestDispatcher("MoneyTitleServlet.jsp").forward(request,response);
-        }
+        session.setAttribute("show",sh);
+        request.getRequestDispatcher("TitleMoneyShow.jsp").forward(request,response);
         out.flush();
         out.close();
     }

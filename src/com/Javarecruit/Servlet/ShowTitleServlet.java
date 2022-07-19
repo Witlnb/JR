@@ -27,9 +27,6 @@ public class ShowTitleServlet extends HttpServlet {
         session.setAttribute("title",sh);
         System.out.println(name);
         request.getRequestDispatcher("TheShow.jsp").forward(request,response);
-        if("--请选择--".equals(name)){
-            request.getRequestDispatcher("TheShow.jsp").forward(request,response);
-        }
 //        if("".equals(name)){
 //            request.getRequestDispatcher("show.jsp").forward(request,response);
 //        }else{
