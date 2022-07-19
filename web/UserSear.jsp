@@ -311,6 +311,11 @@
             top:-70px;
             left: 200px;
         }
+        h3{
+            position: relative;
+            top: 500px;
+            left: 850px;
+        }
     </style>
 </head>
 <body>
@@ -319,12 +324,14 @@
 <div id="head"></div>
 <div id="shows"><img src="Img/宣传语.png" class="show"></div>
 <div class="headTow"><img src="Img/logo透明.png" class="logo"></div>
-<form action="" method="post" id="formOne">
+<form action="UserSearServlet" method="post" id="formOne">
     <input type="text" class="searchOne" name="搜索"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>
 <div class="login"><a href="ShowUI.jsp"><img src="Img/用户头像透明.png" class="userHead" alt="用户头像" title="${LoginU.uname}"></a><b>用户名:${LoginU.uname}<br><b class="ID">ID:${LoginU.uid}</b></b></div>
-<c:forEach items="${search}" var="sear">
+
+<c:if test="${empty search}"><h3>暂未找到信息</h3></c:if>
+<c:if test="${!empty search}"><c:forEach items="${search}" var="sear">
     <div class="admin">
         <img src="Img/老板头像透明.png">
         <div class="information">
@@ -338,7 +345,7 @@
         </div>
     </div>
     <div class="one"></div>
-</c:forEach>
+</c:forEach></c:if>
 <!--<div id="Talk">-->
 <!--    <a href="Talk.jsp">在线沟通</a>-->
 <!--</div>-->

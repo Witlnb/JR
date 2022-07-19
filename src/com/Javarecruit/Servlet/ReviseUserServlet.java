@@ -39,7 +39,12 @@ public class ReviseUserServlet extends HttpServlet {
         u.setJob(job);
         u.setAddress(address);
         u.setPersonal(personal);
-        uu.revise(u);
+        int a = uu.revise(u);
+        if (a < 0){
+            response.sendRedirect("MuI.jsp");
+        }else{
+            response.sendRedirect("ShowUI.jsp");
+        }
         out.flush();
         out.close();
     }

@@ -118,9 +118,7 @@ public class ShowServiceImpl implements ShowService {
     public List<Show> queryBlure(String a) {
         ShowDaoImpl ss = new ShowDaoImpl();
         List<Show> s = ss.queryBlure(a);
-        System.out.println(s);
         List<Show> stwo = ss.queryBlureTitle(a);
-        System.out.println(a);
         if (!s.isEmpty()){
             return s;
         }else if(!stwo.isEmpty()){

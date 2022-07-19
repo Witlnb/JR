@@ -319,12 +319,13 @@
 <div id="head"></div>
 <div id="shows"><img src="Img/宣传语.png" class="show"></div>
 <div class="headTow"><img src="Img/logo透明.png" class="logo"></div>
-<form action="" method="post" id="formOne">
+<form action="HrSearServlet" method="post" id="formOne">
     <input type="text" class="searchOne" name="searchOne"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>
 <div class="login"><a href="ShowHIServlet"><img src="Img/老板头像透明.png" class="userHead" alt="老板头像" title="${LoginH.company}"></a><b class="name">公司:${LoginH.company}<br><b class="ID">ID:${LoginH.companyid}</b></b></div>
-<c:forEach items="${search}" var="sear">
+<c:if test="${empty search}"><h3>暂未找到信息</h3></c:if>
+<c:if test="${!empty search}"><c:forEach items="${search}" var="sear">
     <div class="admin">
         <img src="Img/老板头像透明.png">
         <div class="information">
@@ -338,7 +339,7 @@
         </div>
     </div>
     <div class="one"></div>
-</c:forEach>
+</c:forEach></c:if>
 <!--<div id="Talk">-->
 <!--    <a href="Talk.jsp">在线沟通</a>-->
 <!--</div>-->

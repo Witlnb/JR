@@ -19,9 +19,7 @@ public class HrSearServlet extends HttpServlet {
         String a = request.getParameter("searchOne");
         ShowServiceImpl ss = new ShowServiceImpl();
         List<Show> s = ss.queryBlure(a);
-        if (!s.isEmpty()){
-            session.setAttribute("search",s);
-        }
+        session.setAttribute("search",s);
         response.sendRedirect("HrSear.jsp");
     }
 

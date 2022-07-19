@@ -104,25 +104,25 @@ $(document).ready(function () {
         });
     });
 });
-function judge() {
-    var b = $(".spidOne").html();
-    b = b.toString();
-    b=b.replace(/\s+/g,"");
-    var c = "ok";
-    if (c==b){
-        $.ajax({
-            "url": "ReviseUserServlet",
-            "type": "get",
-            "data": {
-                "upwd": $("input[name=upwd]").val(), "phone": $("input[name=phone]").val()
-                , "mark": $("input[name=mark]").val(), "email": $("input[name=email]").val(),
-                "study": $("input[name=study]").val(), "job": $("input[name=job]").val()
-                , "address": $("input[name=address]").val(), "personal": $("input[name=personal]").val()
-            },
-            "dateType": "text",
-        });
-        window.location="ReviseUserServlet";
-    }else {
-        $("input[name=button]").next().text("请检查输入信息是否完整或者是否正确");
-    }
-}
+// function judge() {
+//     var b = $(".spidOne").html();
+//     b = b.toString();
+//     b=b.replace(/\s+/g,"");
+//     var c = "ok";
+//     if (c==b){
+//         $.ajax({
+//             "url": "ReviseUserServlet",
+//             "type": "get",
+//             "data": {
+//                 "upwd": $("input[name=upwd]").val(), "phone": $("input[name=phone]").val()
+//                 , "mark": $("input[name=mark]").val(), "email": $("input[name=email]").val(),
+//                 "study": $("input[name=study]").val(), "job": $("input[name=job]").val()
+//                 , "address": $("input[name=address]").val(), "personal": $("input[name=personal]").val()
+//             },
+//             "dateType": "text"
+//         });
+//         window.location="ReviseUserServlet";
+//     }else {
+//         $("input[name=button]").next().text("请检查输入信息是否完整或者是否正确");
+//     }
+// }
