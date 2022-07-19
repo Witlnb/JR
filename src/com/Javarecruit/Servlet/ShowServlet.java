@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -18,11 +19,12 @@ public class ShowServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
+        HttpSession session=request.getSession();
         PrintWriter out=response.getWriter();
         ShowServiceImpl show=new ShowServiceImpl();
         List<Show> ssh=show.showAll();
-        request.setAttribute("show",ssh);
-        request.getRequestDispatcher("showMore.jsp").forward(request,response);
+        session.setAttribute("show",ssh);
+        request.getRequestDispatcher("TheAllShow.jsp").forward(request,response);
         out.flush();
         out.close();
     }

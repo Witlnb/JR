@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: 001
   Date: 2022/7/19
-  Time: 14:40
+  Time: 18:39
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -252,19 +252,19 @@
         <input value="清除筛选" type="submit">
     </form>
 </div>
-<c:forEach items="${money}" var="show">
+<c:forEach items="${show}" var="money">
     <div class="First">
         <img src="Img/老板头像透明.png" class="img">
         <div class="weizhi">
-            类型：${show.title}&nbsp;&nbsp;|
-            薪资：${show.money}<br>
+            类型：${money.title}&nbsp;&nbsp;|
+            薪资：${money.money}<br>
             <div class="theheight"></div>
             <form id="Talk" action="Talk.jsp" method="post">
                 <input type="submit" value="在线沟通" class="new">
             </form>
             <div class="weizhi2">
-                公司：${show.company}<br>
-                信息：${show.information}
+                公司：${money.company}<br>
+                信息：${money.information}
             </div>
         </div>
     </div>

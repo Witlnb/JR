@@ -26,14 +26,8 @@ public class ShowMoneyServlet extends HttpServlet {
         Integer  name= Integer.parseInt(request.getParameter("money"));
         ShowServiceImpl ssi=new ShowServiceImpl();
         List<Show> sh=ssi.money(name);
-        System.out.println(name);
         session.setAttribute("iop",sh);
         request.getRequestDispatcher("MoneyShow.jsp").forward(request,response);
-//        if(name== 0){
-//            request.getRequestDispatcher("ShowMoney.jsp").forward(request,response);
-//        }else{
-//            request.getRequestDispatcher("MoneyServlet.jsp").forward(request,response);
-//        }
         out.flush();
         out.close();
     }

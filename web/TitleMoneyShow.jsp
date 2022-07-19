@@ -247,6 +247,10 @@
         </select>
         <input value="查询" type="submit">
     </form>
+    <form method="post" action="Test" class="themoney">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input value="清除筛选" type="submit">
+    </form>
 </div>
 <c:forEach items="${show}" var="show">
     <div class="First">
