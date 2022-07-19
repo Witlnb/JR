@@ -193,7 +193,7 @@
 <div id="head"></div>
 <div id="shows"><img src="Img/宣传语.png" class="show"></div>
 <div class="headTow"><img src="Img/logo透明.png" class="logo"></div>
-<form action="" method="post" id="formOne">
+<form action="UserSearServlet" method="post" id="formOne">
     <input type="text" class="searchOne" name="搜索"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>
@@ -201,8 +201,8 @@
     <form method="post" action="TitleTest" class="themoney">
         标签<select name="title">
         <option value="">请选择</option>
-        <option value="c加加">c++</option>
-        <option value="爪哇">java</option>
+        <option value="c++">c++</option>
+        <option value="java">java</option>
     </select>
         <input value="查询" type="submit">
     </form>
@@ -221,8 +221,8 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         标签<select name="title">
         <option value="">请选择</option>
-        <option value="c加加">c加加</option>
-        <option value="爪哇">爪哇</option>
+        <option value="c++">c++</option>
+        <option value="java">java</option>
     </select>
         薪资<select name="money">
         <option value="0">请选择</option>
