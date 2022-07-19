@@ -256,25 +256,79 @@ public class ShowDaoImpl extends BaseDao implements ShowDao {
     }
     //根据薪资范围展示的方法
     @Override
-    public List<Show> showComp(Integer one) {
+    public Show showComp(Integer one) {
         Connection con=conn();
         PreparedStatement ps=null;
         ResultSet rs=null;
-        List<Show> sh=new ArrayList<Show>();
+        Show ss=new Show();
         String sql="select * from `show` where companyid = ? ";
         try{
             ps=con.prepareStatement(sql);
             ps.setInt(1,one);
             rs=ps.executeQuery();
             while(rs.next()){
-                Show ss=new Show();
                 ss.setSid(rs.getInt("sid"));
                 ss.setTitle(rs.getString("title"));
                 ss.setInformation(rs.getString("information"));
                 ss.setCompany(rs.getString("company"));
                 ss.setCompanyid(rs.getInt("companyid"));
                 ss.setMoney(rs.getInt("money"));
-                sh.add(ss);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return ss;
+    }
+    //模糊查询公司展示
+    @Override
+    public List<Show> queryBlure(String a) {
+        String one = "%"+a+"%";
+        Connection con=conn();
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        List<Show> sh=new ArrayList<Show>();
+        String sql="select * from `show` where company like ?";
+        try{
+            ps=con.prepareStatement(sql);
+            ps.setString(1,one);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                Show s=new Show();
+                s.setSid(rs.getInt("sid"));
+                s.setTitle(rs.getString("title"));
+                s.setInformation(rs.getString("information"));
+                s.setCompany(rs.getString("company"));
+                s.setCompanyid(rs.getInt("companyid"));
+                s.setMoney(rs.getInt("money"));
+                sh.add(s);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return sh;
+    }
+
+    @Override
+    public List<Show> queryBlureTitle(String a) {
+        String one = "%"+a+"%";
+        Connection con=conn();
+        PreparedStatement ps=null;
+        ResultSet rs=null;
+        List<Show> sh=new ArrayList<Show>();
+        String sql="select * from `show` where title like ?";
+        try{
+            ps=con.prepareStatement(sql);
+            ps.setString(1,one);
+            rs=ps.executeQuery();
+            while(rs.next()){
+                Show s=new Show();
+                s.setSid(rs.getInt("sid"));
+                s.setTitle(rs.getString("title"));
+                s.setInformation(rs.getString("information"));
+                s.setCompany(rs.getString("company"));
+                s.setCompanyid(rs.getInt("companyid"));
+                s.setMoney(rs.getInt("money"));
+                sh.add(s);
             }
         } catch (SQLException e) {
             e.printStackTrace();

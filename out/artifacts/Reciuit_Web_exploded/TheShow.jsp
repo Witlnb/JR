@@ -143,6 +143,47 @@
         input{
             font-size: 20px;
         }
+        .First{
+            position: relative;
+            border: solid;
+            border-radius: 20px;
+            top: 200px;
+            left: 300px;
+            width: 1000px;
+            height: 150px;
+        }
+        .img{
+            position: relative;
+            top: -25px;
+            left: 450px;
+        }
+        .weizhi{
+            position: relative;
+            top: -170px;
+            left: 50px;
+            font-size: 18px;
+        }
+        .weizhi2{
+            position: relative;
+            top: -70px;
+            left: 600px;
+        }
+        .theheight{
+            height: 20px;
+        }
+        .new{
+            position: relative;
+            top:0px;
+            left: 60px;
+            border: none;
+            border-radius: 10px;
+            background-color: #43c7c4;
+            width:100px;
+            height:30px;
+            font-size: 20px;
+            color: white;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
@@ -152,8 +193,8 @@
 <div id="head"></div>
 <div id="shows"><img src="Img/宣传语.png" class="show"></div>
 <div class="headTow"><img src="Img/logo透明.png" class="logo"></div>
-<form action="" method="post" id="formOne">
-    <input type="text" class="searchOne" name="搜索"  placeholder="请输入您查询的工作或公司">
+<form action="UserSearServlet" method="post" id="formOne">
+    <input type="text" class="searchOne" name="searchOne"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>
 <div class="showAll">
@@ -213,5 +254,23 @@
     <input value="查询" type="submit">
 </form>
 </div>
+<c:forEach items="${title}" var="show">
+    <div class="First">
+        <img src="Img/老板头像透明.png" class="img">
+        <div class="weizhi">
+            类型：${show.title}&nbsp;&nbsp;|
+            薪资：${show.money}<br>
+            <div class="theheight"></div>
+            <form id="Talk" action="Talk.jsp" method="post">
+                <input type="submit" value="在线沟通" class="new">
+            </form>
+            <div class="weizhi2">
+            公司：${show.company}<br>
+            信息：${show.information}
+            </div>
+        </div>
+    </div>
+    <div class="theheight"></div>
+</c:forEach>
 </body>
 </html>

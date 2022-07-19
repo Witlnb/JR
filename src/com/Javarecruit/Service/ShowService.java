@@ -49,5 +49,10 @@ public interface ShowService {
     /**
      * 获取公司发布信息
      */
-    public List<Show> showComp(Integer one);
+    public Show showComp(Integer one);
+    /**
+     *模糊查询
+     */
+    public List<Show> queryBlure(String a);
+
 }

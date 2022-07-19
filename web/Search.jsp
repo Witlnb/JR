@@ -288,12 +288,27 @@
         .one{
             height: 50px;
         }
-        .login {
+        .login{
+            width: 50px;
+            height: 43px;
             position: fixed;
-            width: 300px;
-            height: 100px;
-            left: 1100px;
-            z-index: 2;
+            top: 0;
+            left: 1509px;
+            color: #f5eded;
+            background-color: #88acce;
+            border:none;
+            z-index: 1;
+        }
+        .inset{
+            width: 50px;
+            height: 43px;
+            position: fixed;
+            top:0;
+            left: 1559px;
+            color: #e9e9f1;
+            background-color: #88acce;
+            border:none;
+            z-index: 1;
         }
         .userHead{
             position: relative;
@@ -319,27 +334,27 @@
 <div id="head"></div>
 <div id="shows"><img src="Img/宣传语.png" class="show"></div>
 <div class="headTow"><img src="Img/logo透明.png" class="logo"></div>
-<form action="HrSearServlet" method="post" id="formOne">
-    <input type="text" class="searchOne" name="searchOne"  placeholder="请输入您查询的工作或公司">
+<form action="" method="post" id="formOne">
+    <input type="text" class="searchOne" name="搜索"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>
-<div class="login"><a href="ShowHIServlet"><img src="Img/老板头像透明.png" class="userHead" alt="老板头像" title="${LoginH.company}"></a><b class="name">公司:${LoginH.company}<br><b class="ID">ID:${LoginH.companyid}</b></b></div>
-<c:forEach items="${user}" var="user">
-<div class="admin">
-    <img src="Img/用户头像透明.png">
-    <div class="information">
-    用户名：${user.uname}&nbsp;|&nbsp;
-    性别：${user.sex}&nbsp;|&nbsp;
-    电话：${user.phone}<br>
-    学历：${user.study}&nbsp;|&nbsp;
-    电子邮箱：${user.email}&nbsp;|&nbsp;
-    工作经验：${user.job}<br>
-    住址：${user.address}
-    <form id="Talk" action="Talk.jsp" method="post">
-    <input type="submit" value="在线沟通" class="new">
-    </form><br>
+<input  class="login" type="button" name="login" value="登录" onclick="login()">
+<form action="Enroll.jsp" method="post" id="register">
+    <input  class="inset" type="submit" name="register" value="注册">
+</form>
+<c:forEach items="${search}" var="sear">
+    <div class="admin">
+        <img src="Img/老板头像透明.png">
+        <div class="information">
+            公司名称：${sear.company}&nbsp;|&nbsp;
+            标签：${sear.title}<br>
+            招聘信息：${sear.information}&nbsp;|&nbsp;
+            薪资：${sear.money}&nbsp;|&nbsp;
+            <form id="Talk" action="Talk.jsp" method="post">
+                <input type="submit" value="在线沟通" class="new">
+            </form><br>
+        </div>
     </div>
-</div>
     <div class="one"></div>
 </c:forEach>
 <!--<div id="Talk">-->

@@ -104,10 +104,30 @@ public class ShowServiceImpl implements ShowService {
         return page;
     }
 
+    /**
+     * 展示公司招聘信息
+     */
     @Override
-    public List<Show> showComp(Integer one) {
+    public Show showComp(Integer one) {
         ShowDaoImpl ss = new ShowDaoImpl();
         ss.showComp(one);
         return  ss.showComp(one);
+    }
+
+    @Override
+    public List<Show> queryBlure(String a) {
+        ShowDaoImpl ss = new ShowDaoImpl();
+        List<Show> s = ss.queryBlure(a);
+        System.out.println(s);
+        List<Show> stwo = ss.queryBlureTitle(a);
+        System.out.println(a);
+        if (!s.isEmpty()){
+            return s;
+        }else if(!stwo.isEmpty()){
+            return stwo;
+        }else{
+            return null;
+        }
+
     }
 }
