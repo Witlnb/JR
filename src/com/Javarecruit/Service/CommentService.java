@@ -15,5 +15,5 @@ public interface CommentService {
      * @param uid 用户编号
      * @return 结果
      */
-    String chaComment(int uid);
+    Comment chaComment(int uid);
 }
