@@ -323,7 +323,7 @@
     <input type="text" class="searchOne" name="搜索"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>
-<div class="login"><a href="ShowUI.jsp"><img src="Img/老板头像透明.png" class="userHead" alt="老板头像" title="${LoginH.company}"></a><b class="name">公司:${LoginH.company}<br><b class="ID">ID:${LoginH.companyid}</b></b></div>
+<div class="login"><a href="ShowHIServlet"><img src="Img/老板头像透明.png" class="userHead" alt="老板头像" title="${LoginH.company}"></a><b class="name">公司:${LoginH.company}<br><b class="ID">ID:${LoginH.companyid}</b></b></div>
 <c:forEach items="${user}" var="user">
 <div class="admin">
     <img src="Img/用户头像透明.png">

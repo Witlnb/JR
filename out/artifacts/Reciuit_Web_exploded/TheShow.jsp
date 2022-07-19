@@ -126,6 +126,23 @@
             top: 10px;
             left: 150px;
         }
+        .showAll{
+            position: relative;
+            top:200px;
+            left: 250px;
+            width: 1500px;
+            height: 100px;
+            font-size: 20px;
+        }
+        .themoney{
+            float: left;
+        }
+        select{
+            font-size: 20px;
+        }
+        input{
+            font-size: 20px;
+        }
     </style>
 </head>
 <body>
@@ -139,8 +156,62 @@
     <input type="text" class="searchOne" name="搜索"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>
-<!--<div id="Talk">-->
-<!--    <a href="Talk.jsp">在线沟通</a>-->
-<!--</div>-->
+<div class="showAll">
+<form method="post" action="TitleTest" class="themoney">
+    标签<select name="title">
+    <option value="">请选择</option>
+    <option value="c加加">c++</option>
+    <option value="爪哇">java</option>
+</select>
+    <input value="查询" type="submit">
+</form>
+<form method="post" action="ShowMoneyServlet" class="themoney">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    薪资<select name="money">
+    <option value="0">请选择</option>
+    <option value="3000">3000以下</option>
+    <option value="4000">4000以下</option>
+    <option value="5000">5000以下</option>
+    <option value="6000">6000以下</option>
+</select>
+    <input value="查询" type="submit">
+</form>
+<form method="post" action="MoneyTitleServlet" class="themoney">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    标签<select name="title">
+    <option value="">请选择</option>
+    <option value="c加加">c加加</option>
+    <option value="爪哇">爪哇</option>
+</select>
+    薪资<select name="money">
+    <option value="0">请选择</option>
+    <option value="3000">3000以下</option>
+    <option value="4000">4000以下</option>
+    <option value="5000">5000以下</option>
+    <option value="6000">6000以下</option>
+</select>
+    <input value="查询" type="submit">
+</form>
+<form method="post" action="RangeServlet" class="themoney">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    请选择范围<select name="one">
+    <option value="0">请选择</option>
+    <option value="2000">2000</option>
+    <option value="3000">3000</option>
+    <option value="4000">4000</option>
+    <option value="5000">5000</option>
+    <option value="6000">6000</option>
+</select>
+    <select name="two">
+        <option value="0">请选择</option>
+        <option value="2000">2000</option>
+        <option value="3000">3000</option>
+        <option value="4000">4000</option>
+        <option value="5000">5000</option>
+        <option value="6000">6000</option>
+    </select>
+    <input value="查询" type="submit">
+</form>
+</div>
 </body>
 </html>
