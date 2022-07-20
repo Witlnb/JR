@@ -32,10 +32,10 @@ public class HrEnrollServlet extends HttpServlet {
         hr.setCpwd(cpwd);
         HrService hrService = new HrServiceImpl();
         int enroll = hrService.enroll(hr);
-        if (enroll!=0){
-            request.getRequestDispatcher("HrLogin.jsp").forward(request,response);
+        if (enroll > 0){
+            request.getRequestDispatcher("First.html").forward(request,response);
         }else {
-            response.sendRedirect("HrEnroll.jsp");
+            response.sendRedirect("Enroll.jsp");
         }
     }
 
