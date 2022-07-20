@@ -51,11 +51,14 @@ public class UserServlet extends HttpServlet {
             session1.setAttribute("phone",phone);
             session1.setAttribute("upwd",upwd);
 //           request.getRequestDispatcher("showMore.jsp").forward(request,response);
-            response.sendRedirect("Test");
+            response.sendRedirect("TheShow.jsp");
         }else if ("成功".equals(login1)){
-                request.getRequestDispatcher("HrShow.jsp").forward(request,response);
+            request.getRequestDispatcher("HrShow.jsp").forward(request,response);
         }else{
-            response.sendRedirect("LoginFail.jsp");
+            if ("http://localhost:8080/Reciuit_Web_exploded/First.html".equals(request.getHeader("referer"))){
+                request.setAttribute("Fail","登录失败请重新登录");
+            }
+            request.getRequestDispatcher("LoginFail.jsp").forward(request,response);
         }
     }
 

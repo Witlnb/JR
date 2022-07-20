@@ -193,7 +193,7 @@
 <div id="head"></div>
 <div id="shows"><img src="Img/宣传语.png" class="show"></div>
 <div class="headTow"><a href="First.html"><img src="Img/logo透明.png" class="logo"></a></div>
-<form action="UserSearServlet" method="post" id="formOne">
+<form action="searchSmServlet" method="post" id="formOne">
     <input type="text" class="searchOne" name="searchOne"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>

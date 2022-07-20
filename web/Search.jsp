@@ -326,6 +326,13 @@
             top:-70px;
             left: 200px;
         }
+        h3{
+            position: absolute;
+            top: 300px;
+            left: 860px;
+            color: #4d4d4f;
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
@@ -335,7 +342,7 @@
 <div id="shows"><img src="Img/宣传语.png" class="show"></div>
 <div class="headTow"><a href="First.html"><img src="Img/logo透明.png" class="logo"></a></div>
 <form action="searchSmServlet" method="post" id="formOne">
-    <input type="text" class="searchOne" name="搜索"  placeholder="请输入您查询的工作或公司">
+    <input type="text" class="searchOne" name="searchOne"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>
 <form action="LoginFail.jsp">

@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -211,7 +212,7 @@
         }
         h1{
             position: relative;
-            left: 30px;
+            text-align: center;
         }
         #fall{
             position: absolute;
@@ -225,8 +226,8 @@
 <div id="head"></div>
 <div id="shows"><img src="Img/宣传语.png" class="show"></div>
 <div class="headTow"><a href="First.html"><img src="Img/logo透明.png" class="logo"></a></div>
-<form action="" method="post" id="formOne">
-    <input type="text" class="searchOne" name="搜索"  placeholder="请输入您查询的工作或公司">
+<form action="searchSmServlet" method="post" id="formOne">
+    <input type="text" class="searchOne" name="searchOne"  placeholder="请输入您查询的工作或公司">
     <input type="submit" class="searchSm" value="搜索">
 </form>
 <input  class="login" type="button" name="login" value="登录" onclick="login()">
@@ -250,7 +251,7 @@
 <div id="LoginP">
     <div id="upbody"></div>
     <form action="UserServlet" method="post" id="loginPage">
-        <h1>登录失败请重新登录</h1>
+        <h1><c:if test="${!empty Fail}">${Fail}</c:if><c:if test="${empty Fail}">请登录</c:if></h1>
         <div id="fall">
             <div class="name"> 手机号:&nbsp;<input type="text" name="phone">
                 <br/>
