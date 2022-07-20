@@ -51,8 +51,7 @@ public class UserServlet extends HttpServlet {
             session1.setAttribute("phone",phone);
             session1.setAttribute("upwd",upwd);
 //           request.getRequestDispatcher("showMore.jsp").forward(request,response);
-            out.print("hello");
-            response.sendRedirect("TheShow.jsp");
+            response.sendRedirect("Test");
         }else if ("成功".equals(login1)){
                 request.getRequestDispatcher("HrShow.jsp").forward(request,response);
         }else{
