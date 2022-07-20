@@ -39,10 +39,10 @@ public class EnrollServlet extends HttpServlet {
         user.setPersonal(personal);
         UserService userService = new UserServiceImpl();
         int enroll = userService.enroll(user);
-        if (enroll!=0){
-            request.getRequestDispatcher("LoginFail.jsp").forward(request,response);
+        if (enroll > 0){
+            request.getRequestDispatcher("First.html").forward(request,response);
         }else {
-            response.sendRedirect("UserEnroll.jsp");
+            response.sendRedirect("Enroll.jsp");
         }
     }
 
